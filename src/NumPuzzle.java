@@ -19,6 +19,7 @@ import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.Timer;
 import javax.swing.text.html.ImageView;
@@ -53,13 +54,24 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 	
 	
 	
+	/*Options for game*/
+	private String sizeOptions[] = 	{"2x2","3x3","4x4","5x5"};	
+	private String timeOptions[] = {"UP","DOWN"};
 	
-	private String options[] = 	{"2x2","3x3","4x4","5x5"};
-	/*basic shape*/
 	
-	private JComboBox optionsList;
+	private JComboBox timeOptionList;
+	private JComboBox gameOptionsList;
+	
+	
+	private JTextField timeDisplay;
+	private JTextField pointDisplay;
+	
+	
+	private JTextArea logArea;
+	
+	private String sizeOption;
 	NumPuzzle(){
-		frame = new JFrame("Fun Number Puzzle made by Jaeho Oh");
+		frame = new JFrame("Fun Number Puzzle made by Jaeho Oh and Nathan Chen");
 		playingPane = new JPanel();
 		rightPane = new JPanel();
 		historyPane = new JPanel();
@@ -67,9 +79,9 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		frame.add(playingPane);
 		frame.add(rightPane);
 		frame.add(historyPane);
-		optionsList = new JComboBox(options);
+		gameOptionsList = new JComboBox(sizeOptions);
 		
-		optionsList.setBounds(50,50,90,20);
+		gameOptionsList.setBounds(50,50,90,20);
 	}
 	
 	
@@ -105,6 +117,9 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 	JButton btn7 = new JButton();
 	JButton btn8 = new JButton();
 	JButton btn9 = new JButton();
+	JButton startButton = new JButton();
+	JButton restartButton = new JButton();
+	JButton clearButton = new JButton();
 
 	
 	
