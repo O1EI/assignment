@@ -70,7 +70,17 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 	private JTextArea logArea;
 	
 	private String sizeOption;
-	NumPuzzle(){
+	public NumPuzzle(){
+		setAndLaunch();
+	}
+	
+	private void setAndLaunch() {
+		Font font1 = new Font("Sansserif", Font.BOLD, 20);
+		timeDisplay = new JTextField();
+		timeDisplay.setFont(font1);
+		
+		
+		
 		frame = new JFrame("Fun Number Puzzle made by Jaeho Oh and Nathan Chen");
 		playingPane = new JPanel();
 		rightPane = new JPanel();
