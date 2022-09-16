@@ -35,9 +35,23 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 	
 	
 	
+	/*buttons that is needed*/
+	JButton btn1 = new JButton();
+	JButton btn2 = new JButton();
+	JButton btn3 = new JButton();
+	JButton btn4 = new JButton();
+	JButton btn5 = new JButton();
+	JButton btn6 = new JButton();
+	JButton btn7 = new JButton();
+	JButton btn8 = new JButton();
+	JButton btn9 = new JButton();
+	JButton startButton = new JButton("Start");
+	JButton restartButton = new JButton("Restart");
+	JButton clearButton = new JButton("Clear");
+	
 	
 
-	private JButton resetButton = new JButton("Reset");//reset button
+	
 	
 	
 	/*Menu variables*/
@@ -82,7 +96,17 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		
 		
 		frame = new JFrame("Fun Number Puzzle made by Jaeho Oh and Nathan Chen");
+		
+		
 		playingPane = new JPanel();
+		playingPane.setBackground(new Color(203,208,204));
+		playingPane.setBounds(100,100,500,500);
+		playingPane.add(btn1);playingPane.add(btn2);playingPane.add(btn3);
+		playingPane.add(btn4);playingPane.add(btn5);playingPane.add(btn6);
+		playingPane.add(btn7);playingPane.add(btn8);playingPane.add(btn9);
+		playingPane.setLayout(new GridLayout(3,3,4,4));
+		
+		
 		rightPane = new JPanel();
 		historyPane = new JPanel();
 		
@@ -92,6 +116,19 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		gameOptionsList = new JComboBox(sizeOptions);
 		
 		gameOptionsList.setBounds(50,50,90,20);
+		
+		
+		frame.addWindowListener(this);
+		frame.setLayout(null);
+		frame.pack();
+		
+		frame.setSize(new Dimension(1000,700));
+		
+		frame.setResizable(false);
+		
+		frame.setLocationByPlatform(true);
+		
+		frame.setVisible(true);
 	}
 	
 	
@@ -118,18 +155,7 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 	
 	
 	
-	JButton btn1 = new JButton();
-	JButton btn2 = new JButton();
-	JButton btn3 = new JButton();
-	JButton btn4 = new JButton();
-	JButton btn5 = new JButton();
-	JButton btn6 = new JButton();
-	JButton btn7 = new JButton();
-	JButton btn8 = new JButton();
-	JButton btn9 = new JButton();
-	JButton startButton = new JButton();
-	JButton restartButton = new JButton();
-	JButton clearButton = new JButton();
+	
 
 	
 	
