@@ -11,6 +11,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 import javax.swing.BorderFactory;
+import javax.swing.DefaultListCellRenderer;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -50,21 +51,21 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 	JButton clearButton = new JButton("Clear");
 	
 	
-
-	
-	
 	
 	/*Menu variables*/
 	private JMenu menu;
 	private JMenuItem gameItem, helpItem;
 	
 	
+	
 	/*Label variables*/
 	private JLabel timeLabel,scoreLabel,logoLabel;
 	
 	
+	
 	/*check box for mode*/
 	private Checkbox modeCheckBox = new Checkbox("Mode :");
+	
 	
 	
 	
@@ -73,31 +74,42 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 	private String timeOptions[] = {"UP","DOWN"};
 	
 	
+	/*Combobox for time options, game options*/
 	private JComboBox timeOptionList;
 	private JComboBox gameOptionsList;
 	
 	
+	
+	/*text field for time and point*/
 	private JTextField timeDisplay;
 	private JTextField pointDisplay;
 	
 	
+	
+	/*text field for history(log)*/
 	private JTextArea logArea;
 	
-	private String sizeOption;
+	
+	
+	
+	/*method to start*/
 	public NumPuzzle(){
 		setAndLaunch();
 	}
 	
+	
+	/*launch*/
 	private void setAndLaunch() {
-		Font font1 = new Font("Sansserif", Font.BOLD, 20);
+		Font font1 = new Font("Sansserif", Font.BOLD, 35);//font setting
 		timeDisplay = new JTextField();
 		timeDisplay.setFont(font1);
 		
 		
 		
-		frame = new JFrame("Fun Number Puzzle made by Jaeho Oh and Nathan Chen");
+		frame = new JFrame("Fun Number Puzzle made by Jaeho Oh and Nathan Chen");//title
 		
 		
+		/*center panel for playing*/
 		playingPane = new JPanel();
 		playingPane.setBackground(new Color(203,208,204));
 		playingPane.setBounds(100,100,500,500);
@@ -107,24 +119,40 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		playingPane.setLayout(new GridLayout(3,3,4,4));
 		
 		
+		/*panel that is on right side for the components*/
 		rightPane = new JPanel();
+		
+		
+		/*panel that is on right bottom for history*/
 		historyPane = new JPanel();
 		
+		
+		/*adding panels to frame*/
 		frame.add(playingPane);
 		frame.add(rightPane);
 		frame.add(historyPane);
+		
+		
+		/*option list for the size of the game*/
 		gameOptionsList = new JComboBox(sizeOptions);
+		DefaultListCellRenderer centerRenderer = new DefaultListCellRenderer();
+		centerRenderer.setHorizontalAlignment(DefaultListCellRenderer.CENTER);
+		gameOptionsList.setFont(font1);
+		gameOptionsList.setRenderer(centerRenderer);
 		
-		gameOptionsList.setBounds(50,50,90,20);
+		gameOptionsList.setBounds(740,80,180,40);
+		frame.add(gameOptionsList);
 		
 		
+		/*to actually launch the program*/
 		frame.addWindowListener(this);
 		frame.setLayout(null);
 		frame.pack();
 		
-		frame.setSize(new Dimension(1000,700));
 		
-		frame.setResizable(false);
+		frame.setSize(new Dimension(1000,700));//size of the application
+		
+		frame.setResizable(false);//if the user can re size the window
 		
 		frame.setLocationByPlatform(true);
 		
