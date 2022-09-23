@@ -153,7 +153,7 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		rightPane.setBounds(630,0,400,700);
 		rightPane.setBackground(Color.yellow);
 		rightPane.add(clearButton);
-		clearButton.setBounds(650,400,10,10);
+		clearButton.setBounds(130,600,100,50);
 		
 		
 		/*option list for the size of the game*/
