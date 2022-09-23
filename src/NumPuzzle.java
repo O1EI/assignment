@@ -7,10 +7,12 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 import javax.swing.BorderFactory;
+import javax.swing.ButtonGroup;
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -20,6 +22,7 @@ import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.Timer;
@@ -63,8 +66,8 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 	
 	
 	
-	/*check box for mode*/
-	private Checkbox modeCheckBox = new Checkbox("Mode :");
+//	/*check box for mode*/
+//	private Checkbox modeCheckBox = new Checkbox("Mode :");
 	
 	
 	
@@ -78,6 +81,10 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 	private JComboBox timeOptionList;
 	private JComboBox gameOptionsList;
 	
+	
+	/*Radio button*/
+	private JRadioButton r1;
+	private JRadioButton r2;
 	
 	
 	/*text field for time and point*/
@@ -100,9 +107,10 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 	
 	/*launch*/
 	private void setAndLaunch() {
-		Font font1 = new Font("Sansserif", Font.BOLD, 35);//font setting
+		Font modeFont = new Font("Sansserif", Font.BOLD, 35);//font setting
+		
 		timeDisplay = new JTextField();
-		timeDisplay.setFont(font1);
+		timeDisplay.setFont(modeFont);
 		
 		
 		
@@ -137,17 +145,42 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		gameOptionsList = new JComboBox(sizeOptions);
 		DefaultListCellRenderer centerRenderer = new DefaultListCellRenderer();
 		centerRenderer.setHorizontalAlignment(DefaultListCellRenderer.CENTER);
-		gameOptionsList.setFont(font1);
+		gameOptionsList.setFont(modeFont);
 		gameOptionsList.setRenderer(centerRenderer);
 		
-		gameOptionsList.setBounds(740,80,180,40);
+		JLabel dimTitle = new JLabel("Dim : ");
+		dimTitle.setFont(modeFont);
+		dimTitle.setBounds(650,100,180,40);
+		
+		gameOptionsList.setBounds(740,100,180,40);
 		frame.add(gameOptionsList);
+		frame.add(dimTitle);
+		
+		
+		
+		/*Mode option*/
+		r1 = new JRadioButton("Design");
+		r2 = new JRadioButton("Play");
+		r1.setBounds(740,150,80,80);
+		r2.setBounds(830,150,80,80);
+		r1.setMnemonic(KeyEvent.VK_D);
+		r2.setMnemonic(KeyEvent.VK_P);
+		JLabel modeTitle = new JLabel("Mode: ");
+		
+		ButtonGroup modeGroup = new ButtonGroup();
+		modeTitle.setBounds(700,150,80,80);
+		
+		modeGroup.add(r1);modeGroup.add(r2);
+		
+		frame.add(r1);frame.add(r2);frame.add(modeTitle);
 		
 		
 		/*to actually launch the program*/
 		frame.addWindowListener(this);
 		frame.setLayout(null);
 		frame.pack();
+		
+		
 		
 		
 		frame.setSize(new Dimension(1000,700));//size of the application
@@ -179,15 +212,6 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 	
 	
 	ImageIcon logo = new ImageIcon("Logo.gif");
-	
-	
-	
-	
-	
-
-	
-	
-	
 	
 	
 	
