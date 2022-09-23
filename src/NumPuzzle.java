@@ -62,7 +62,7 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 	
 	
 	/*Label variables*/
-	private JLabel timeLabel,scoreLabel,logoLabel;
+	private JLabel timeLabel,scoreLabel,logoLabel,iconLabel;
 	
 	
 	
@@ -80,6 +80,9 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 	/*Combobox for time options, game options*/
 	private JComboBox timeOptionList;
 	private JComboBox gameOptionsList;
+	
+	/*Icon*/
+	
 	
 	
 	/*Radio button*/
@@ -108,7 +111,10 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 	/*launch*/
 	private void setAndLaunch() {
 		Font modeFont = new Font("Sansserif", Font.BOLD, 35);//font setting
-		
+		ImageIcon logoIcon = new ImageIcon("Logo.png");
+		iconLabel = new JLabel();
+		iconLabel.setIcon(logoIcon);
+		iconLabel.setBounds(30,30,300,60);
 		timeDisplay = new JTextField();
 		timeDisplay.setFont(modeFont);
 		
@@ -129,6 +135,9 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		
 		/*panel that is on right side for the components*/
 		rightPane = new JPanel();
+		rightPane.setLayout(new BorderLayout());
+		
+		rightPane.add(iconLabel);
 		
 		
 		/*panel that is on right bottom for history*/
@@ -141,6 +150,12 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		frame.add(historyPane);
 		
 		
+		rightPane.setBounds(630,0,400,700);
+		rightPane.setBackground(Color.yellow);
+		rightPane.add(clearButton);
+		clearButton.setBounds(650,400,10,10);
+		
+		
 		/*option list for the size of the game*/
 		gameOptionsList = new JComboBox(sizeOptions);
 		DefaultListCellRenderer centerRenderer = new DefaultListCellRenderer();
@@ -150,29 +165,34 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		
 		JLabel dimTitle = new JLabel("Dim : ");
 		dimTitle.setFont(modeFont);
-		dimTitle.setBounds(650,100,180,40);
+
+		rightPane.add(dimTitle);
+		rightPane.add(gameOptionsList);
+		dimTitle.setBounds(50,115,180,40);
 		
-		gameOptionsList.setBounds(740,100,180,40);
-		frame.add(gameOptionsList);
-		frame.add(dimTitle);
+		gameOptionsList.setBounds(150,115,180,40);
 		
+		JLabel dummyLabel = new JLabel(); 
 		
 		
 		/*Mode option*/
 		r1 = new JRadioButton("Design");
 		r2 = new JRadioButton("Play");
-		r1.setBounds(740,150,80,80);
-		r2.setBounds(830,150,80,80);
+		r1.setBounds(150,160,80,60);
+		r2.setBounds(230,160,50,60);
+		r1.setBackground(Color.yellow);
+		r2.setBackground(Color.yellow);
 		r1.setMnemonic(KeyEvent.VK_D);
 		r2.setMnemonic(KeyEvent.VK_P);
 		JLabel modeTitle = new JLabel("Mode: ");
 		
 		ButtonGroup modeGroup = new ButtonGroup();
-		modeTitle.setBounds(700,150,80,80);
-		
+		modeTitle.setBounds(90,150,40,80);
+		rightPane.add(modeTitle);
 		modeGroup.add(r1);modeGroup.add(r2);
 		
-		frame.add(r1);frame.add(r2);frame.add(modeTitle);
+		rightPane.add(r1);rightPane.add(r2);
+		rightPane.add(dummyLabel);
 		
 		
 		/*to actually launch the program*/
