@@ -131,15 +131,14 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		/*center panel for playing*/
 		playingPane = new JPanel();
 		playingPane.setBackground(new Color(203,208,204));
-<<<<<<< HEAD
+
 		playingPane.setBounds(100,100,500,500);
 		
 		
 		playingPane.setLayout(new GridLayout(3,3,4,4));
 		
-=======
 		playingPane.setBounds(10,10,650,650);
->>>>>>> branch 'master' of https://github.com/O1EI/NumberPuzzle.git
+
 		
 		/*panel that is on right side for the components*/
 		rightPane = new JPanel();
@@ -161,21 +160,21 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		rightPane.setBounds(670,0,400,850);
 		rightPane.setBackground(Color.yellow);
 		rightPane.add(clearButton);
-<<<<<<< HEAD
+
 		clearButton.setBounds(650,400,10,10);
-=======
+
 		clearButton.setBounds(140,600,100,50);
->>>>>>> branch 'master' of https://github.com/O1EI/NumberPuzzle.git
+
 		
 		
 		/*option list for the size of the game*/
 		gameOptionsList = new JComboBox<String>(sizeOptions);
-		
+		//System.out.println(gameOptionsList.getSelectedItem());
 		DefaultListCellRenderer centerRenderer = new DefaultListCellRenderer();
 		centerRenderer.setHorizontalAlignment(DefaultListCellRenderer.CENTER);
 		gameOptionsList.setFont(modeFont);
 		gameOptionsList.setRenderer(centerRenderer);
-		
+		char gameSize;
 		//playingPane.addActionListener(new ActionListener() {
 		ActionListener cbActionListener = new ActionListener() {
 			@Override
@@ -183,32 +182,33 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 				String s = (String) gameOptionsList.getSelectedItem();
 				
 				System.out.println(s);
-				
-				switch(s) {
-					case "2x2":
-						playingPane.add(btn1);
-						playingPane.add(btn2);
-						playingPane.add(btn3);
-						playingPane.add(btn9);
-						break;
-					case "3x3":
-						playingPane.add(btn1);
-						playingPane.add(btn2);
-						playingPane.add(btn3);
-						playingPane.add(btn4);
-						playingPane.add(btn5);
-						playingPane.add(btn6);
-						playingPane.add(btn7);
-						playingPane.add(btn8);
-						playingPane.add(btn9);
-						break;
-				}
+				gameSize = s.charAt(0);
+//				switch(s) {
+//					case "2x2":
+//						playingPane.add(btn1);
+//						playingPane.add(btn2);
+//						playingPane.add(btn3);
+//						playingPane.add(btn9);
+//						break;
+//					case "3x3":
+//						playingPane.add(btn1);
+//						playingPane.add(btn2);
+//						playingPane.add(btn3);
+//						playingPane.add(btn4);
+//						playingPane.add(btn5);
+//						playingPane.add(btn6);
+//						playingPane.add(btn7);
+//						playingPane.add(btn8);
+//						playingPane.add(btn9);
+//						break;
+//				}
 			}
 		};
 		
 		gameOptionsList.addActionListener(cbActionListener);
-	
+		
 		/*button text size and font*/
+		/*
 		btn1.setFont(new Font("Arial", Font.PLAIN, 50));
 		btn2.setFont(new Font("Arial", Font.PLAIN, 50));
 		btn3.setFont(new Font("Arial", Font.PLAIN, 50));
@@ -218,8 +218,9 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		btn7.setFont(new Font("Arial", Font.PLAIN, 50));
 		btn8.setFont(new Font("Arial", Font.PLAIN, 50));
 		btn9.setFont(new Font("Arial", Font.PLAIN, 50));
-		
+		*/
 		/*allows buttons to perform actions*/
+		/*
 		btn1.addActionListener(this);  
 		btn2.addActionListener(this);  
 		btn3.addActionListener(this);  
@@ -229,14 +230,14 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		btn7.addActionListener(this);  
 		btn8.addActionListener(this);  
 		btn9.addActionListener(this);
-		
+		*/
 		JLabel dimTitle = new JLabel("Dim : ");
 		dimTitle.setFont(modeFont);
 		
 		rightPane.add(dimTitle);
 		rightPane.add(gameOptionsList);
 		gameOptionsList.addActionListener(this);
-		char gameSize = gameOptionsList.getActionCommand().charAt(0);
+		
 		dimSize = Character.getNumericValue(gameSize);
 		dimSize = 5;
 		
