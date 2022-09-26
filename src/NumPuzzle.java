@@ -120,7 +120,6 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		timeDisplay.setFont(modeFont);
 		
 		
-		
 		frame = new JFrame("Fun Number Puzzle made by Jaeho Oh and Nathan Chen");//title
 		
 		
@@ -128,32 +127,10 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		playingPane = new JPanel();
 		playingPane.setBackground(new Color(203,208,204));
 		playingPane.setBounds(100,100,500,500);
-		playingPane.add(btn1);playingPane.add(btn2);playingPane.add(btn3);
-		playingPane.add(btn4);playingPane.add(btn5);playingPane.add(btn6);
-		playingPane.add(btn7);playingPane.add(btn8);playingPane.add(btn9);
+		
+		
 		playingPane.setLayout(new GridLayout(3,3,4,4));
 		
-		/*button text size and font*/
-		btn1.setFont(new Font("Arial", Font.PLAIN, 50));
-		btn2.setFont(new Font("Arial", Font.PLAIN, 50));
-		btn3.setFont(new Font("Arial", Font.PLAIN, 50));
-		btn4.setFont(new Font("Arial", Font.PLAIN, 50));
-		btn5.setFont(new Font("Arial", Font.PLAIN, 50));
-		btn6.setFont(new Font("Arial", Font.PLAIN, 50));
-		btn7.setFont(new Font("Arial", Font.PLAIN, 50));
-		btn8.setFont(new Font("Arial", Font.PLAIN, 50));
-		btn9.setFont(new Font("Arial", Font.PLAIN, 50));
-		
-		/*allows buttons to perform actions*/
-		btn1.addActionListener(this);  
-		btn2.addActionListener(this);  
-		btn3.addActionListener(this);  
-		btn4.addActionListener(this);  
-		btn5.addActionListener(this);  
-		btn6.addActionListener(this);  
-		btn7.addActionListener(this);  
-		btn8.addActionListener(this);  
-		btn9.addActionListener(this);
 		
 		/*panel that is on right side for the components*/
 		rightPane = new JPanel();
@@ -175,15 +152,70 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		rightPane.setBounds(630,0,400,700);
 		rightPane.setBackground(Color.yellow);
 		rightPane.add(clearButton);
-		clearButton.setBounds(130,600,100,50);
+		clearButton.setBounds(650,400,10,10);
 		
 		
 		/*option list for the size of the game*/
-		gameOptionsList = new JComboBox(sizeOptions);
+		gameOptionsList = new JComboBox<String>(sizeOptions);
+		
 		DefaultListCellRenderer centerRenderer = new DefaultListCellRenderer();
 		centerRenderer.setHorizontalAlignment(DefaultListCellRenderer.CENTER);
 		gameOptionsList.setFont(modeFont);
 		gameOptionsList.setRenderer(centerRenderer);
+		
+		//playingPane.addActionListener(new ActionListener() {
+		ActionListener cbActionListener = new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String s = (String) gameOptionsList.getSelectedItem();
+				
+				System.out.println(s);
+				
+				switch(s) {
+					case "2x2":
+						playingPane.add(btn1);
+						playingPane.add(btn2);
+						playingPane.add(btn3);
+						playingPane.add(btn9);
+						break;
+					case "3x3":
+						playingPane.add(btn1);
+						playingPane.add(btn2);
+						playingPane.add(btn3);
+						playingPane.add(btn4);
+						playingPane.add(btn5);
+						playingPane.add(btn6);
+						playingPane.add(btn7);
+						playingPane.add(btn8);
+						playingPane.add(btn9);
+						break;
+				}
+			}
+		};
+		
+		gameOptionsList.addActionListener(cbActionListener);
+	
+		/*button text size and font*/
+		btn1.setFont(new Font("Arial", Font.PLAIN, 50));
+		btn2.setFont(new Font("Arial", Font.PLAIN, 50));
+		btn3.setFont(new Font("Arial", Font.PLAIN, 50));
+		btn4.setFont(new Font("Arial", Font.PLAIN, 50));
+		btn5.setFont(new Font("Arial", Font.PLAIN, 50));
+		btn6.setFont(new Font("Arial", Font.PLAIN, 50));
+		btn7.setFont(new Font("Arial", Font.PLAIN, 50));
+		btn8.setFont(new Font("Arial", Font.PLAIN, 50));
+		btn9.setFont(new Font("Arial", Font.PLAIN, 50));
+		
+		/*allows buttons to perform actions*/
+		btn1.addActionListener(this);  
+		btn2.addActionListener(this);  
+		btn3.addActionListener(this);  
+		btn4.addActionListener(this);  
+		btn5.addActionListener(this);  
+		btn6.addActionListener(this);  
+		btn7.addActionListener(this);  
+		btn8.addActionListener(this);  
+		btn9.addActionListener(this);
 		
 		JLabel dimTitle = new JLabel("Dim : ");
 		dimTitle.setFont(modeFont);
@@ -268,127 +300,6 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		/*button logic*/
-		if (e.getSource() == btn1) {
-			String s = btn1.getLabel();  
-			if (btn2.getLabel().equals(" ")) { 
-				btn2.setLabel(s);
-				btn1.setLabel(" ");
-			} else if (btn4.getLabel().equals(" ")) {
-				btn4.setLabel(s);
-				btn1.setLabel(" ");
-			}  
-		}
 		
-		if (e.getSource() == btn3) {  
-			String s = btn3.getLabel();  
-			if (btn2.getLabel().equals(" ")) {
-				btn2.setLabel(s);
-				btn3.setLabel(" ");
-			} else if (btn6.getLabel().equals(" ")) {
-				btn6.setLabel(s);
-				btn3.setLabel(" ");
-			}
-		}
-		
-		if (e.getSource() == btn2) {
-			String s = btn2.getLabel();  
-			if (btn1.getLabel().equals(" ")) {
-				btn1.setLabel(s);
-				btn2.setLabel(" ");
-			} else if (btn3.getLabel().equals(" ")) {
-				btn3.setLabel(s);
-				btn2.setLabel(" ");
-			} else if (btn5.getLabel().equals(" ")) {
-				btn5.setLabel(s);
-				btn2.setLabel(" ");
-			}  
-		}
-		
-		if (e.getSource() == btn4) {  
-			String s=btn4.getLabel();  
-			if (btn1.getLabel().equals(" ")) {
-				btn1.setLabel(s);
-				btn4.setLabel(" ");
-			} else if (btn7.getLabel().equals(" ")) { 
-				btn7.setLabel(s);
-				btn4.setLabel(" ");
-			} else if (btn5.getLabel().equals(" ")) {
-				btn5.setLabel(s);
-				btn4.setLabel(" ");
-			}  
-		}
-		
-		if (e.getSource() == btn5) {  
-			String s = btn5.getLabel();  
-			if (btn2.getLabel().equals(" ")) {
-				btn2.setLabel(s);
-				btn5.setLabel(" ");
-			} else if (btn4.getLabel().equals(" ")) {
-				btn4.setLabel(s);
-				btn5.setLabel(" ");
-			} else if (btn6.getLabel().equals(" ")) {
-				btn6.setLabel(s);
-				btn5.setLabel(" ");
-			} else if (btn8.getLabel().equals(" ")) {
-				btn8.setLabel(s);
-				btn5.setLabel(" ");
-			}  
-		}
-		
-		if (e.getSource() == btn6) {  
-			String s = btn6.getLabel();  
-			if (btn9.getLabel().equals(" ")) {
-				btn9.setLabel(s);
-				btn6.setLabel(" ");
-			} else if (btn3.getLabel().equals(" ")) {
-				btn3.setLabel(s);
-				btn6.setLabel(" ");
-			} else if (btn5.getLabel().equals(" ")) {
-				btn5.setLabel(s);
-				btn6.setLabel(" ");
-			}  
-		}
-		
-		if (e.getSource() == btn7) {  
-			String s = btn7.getLabel();  
-			if (btn4.getLabel().equals(" ")) {
-				btn4.setLabel(s);
-				btn7.setLabel(" ");
-			} else if (btn8.getLabel().equals(" ")) {
-				btn8.setLabel(s);
-				btn7.setLabel(" ");
-			}
-		}
-		
-		if (e.getSource() == btn8) {  
-			String s = btn8.getLabel();  
-			if (btn7.getLabel().equals(" ")) {
-				btn7.setLabel(s);
-				btn8.setLabel(" ");
-			} else if (btn9.getLabel().equals(" ")) {
-				btn9.setLabel(s);
-				btn8.setLabel(" ");
-			} else if (btn5.getLabel().equals(" ")) {
-				btn5.setLabel(s);
-				btn8.setLabel(" ");
-			}    
-		}
-		
-		if (e.getSource() == btn9) {  
-			String s = btn9.getLabel();  
-			if (btn6.getLabel().equals(" ")) {
-				btn6.setLabel(s);
-				btn9.setLabel(" ");
-			} else if (btn8.getLabel().equals(" ")) {
-				btn8.setLabel(s);
-				btn9.setLabel(" ");
-			} if (btn1.getLabel().equals("1") && btn2.getLabel().equals("2") 
-			&& btn3.getLabel().equals("3") && btn4.getLabel().equals("4") 
-			&& btn5.getLabel().equals("5") && btn6.getLabel().equals("6")
-			&& btn7.getLabel().equals("7") && btn8.getLabel().equals("8")
-			&& btn9.getLabel().equals(" ")) {   
-				JOptionPane.showInputDialog(NumPuzzle.this,"!!!you won!!!");  
-			}  
-		}
 	}
 }
