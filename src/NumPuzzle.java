@@ -24,6 +24,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.Timer;
@@ -35,7 +36,7 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 	
 	
 	//panels that I need
-	private JPanel playingPane,rightPane,historyPane;
+	private JPanel playingPane,rightPane;
 	
 	/*Font*/
 	Font modeFont = new Font("Sansserif", Font.BOLD, 35);
@@ -80,11 +81,11 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 	
 	/*Options for game*/
 	private String sizeOptions[] = 	{"2x2","3x3","4x4","5x5"};	
-	private String timeOptions[] = {"UP","DOWN"};
+	private String typeOption[] = {"Text","Num"};
 	
 	
-	/*Combobox for time options, game options*/
-	private JComboBox timeOptionList;
+	/*Combobox for type options, game options*/
+	private JComboBox typeOptionList;
 	private JComboBox gameOptionsList;
 	
 	/*Variable*/
@@ -140,22 +141,18 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		
 		rightPane.add(iconLabel);
 		
-		
-		/*panel that is on right bottom for history*/
-		historyPane = new JPanel();
-		
 			
 		/*adding panels to frame*/
 		frame.add(rightPane);
 		frame.add(playingPane);
-		frame.add(historyPane);
+
 		
 		
 		rightPane.setBounds(670,0,400,850);
 		rightPane.setBackground(Color.yellow);
 		rightPane.add(clearButton);
 		clearButton.setBounds(140,600,100,50);
-		
+			
 		
 		/*option list for the size of the game*/
 		gameOptionsList = new JComboBox(sizeOptions);
@@ -198,7 +195,7 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 			JButton btn6 = new JButton("6");
 			JButton btn7 = new JButton("7");
 			JButton btn8 = new JButton("8");
-			
+				
 			btn4.setFont(buttonFont);
 			btn5.setFont(buttonFont);
 			btn6.setFont(buttonFont);
@@ -323,10 +320,7 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		
 		
 		
-		//rightPane.add(startButton);rightPane.add(hideButton);rightPane.add(saveButton);
-		//rightPane.add(loadButton);rightPane.add(randButton);rightPane.add(finButton);
-		
-		
+		/*Buttons*/
 		saveButton.setBounds(55,230,80,50);
 		rightPane.add(saveButton);
 		
@@ -342,10 +336,65 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		hideButton.setBounds(200,300,125,50);
 		rightPane.add(hideButton);
 		
-
-		for(int i = 0; i<dimSize;i++) {
 		
-		}
+		
+		/*type selection here*/
+		typeOptionList = new JComboBox(typeOption);
+		typeOptionList.setFont(new Font("Sansserif", Font.BOLD, 15));
+		typeOptionList.setRenderer(centerRenderer);
+		typeOptionList.setBounds(100,380,70,30);
+		rightPane.add(typeOptionList);
+		
+		
+		
+		JLabel typeTitle = new JLabel("Type : ");
+		typeTitle.setFont(new Font("Sansserif", Font.BOLD, 15));
+		typeTitle.setBounds(45, 380, 55, 30);
+		rightPane.add(typeTitle);
+		
+		
+		/*time and point displays*/
+		timeDisplay = new JTextField("0");
+		pointDisplay = new JTextField("0");
+		
+		timeDisplay.setFont(new Font("Sansserif", Font.BOLD, 15));
+		timeDisplay.setEditable(false);
+		pointDisplay.setFont(new Font("Sansserif", Font.BOLD, 15));
+		pointDisplay.setEditable(false);
+		
+		timeDisplay.setBounds(100,420,70,30);
+		pointDisplay.setBounds(100,460,70,30);
+		
+		JLabel timeTitle = new JLabel("Time");
+		JLabel pointTitle = new JLabel("Point");
+		
+		timeTitle.setFont(new Font("Sansserif", Font.BOLD, 15));
+		pointTitle.setFont(new Font("Sansserif", Font.BOLD, 15));
+		timeTitle.setBounds(45,420,55,30);
+		pointTitle.setBounds(45,460,55,30);
+		
+		
+		rightPane.add(timeDisplay);rightPane.add(pointDisplay);
+		rightPane.add(timeTitle);rightPane.add(pointTitle);
+		
+		
+		
+		
+		/*Text input area*/
+		JTextField inputText = new JTextField();
+		inputText.setBounds(45,500,135,30);
+		inputText.setFont(new Font("Sansserif", Font.BOLD, 13));
+		rightPane.add(inputText);
+		
+		
+		/*log history area*/
+		logArea = new JTextArea("Your move");		
+		logArea.setBounds(200,380,130,150);
+		logArea.setEditable(false);
+		logArea.setBackground(Color.lightGray);
+		logArea.setFont(new Font("Sansserif", Font.BOLD, 15));
+		rightPane.add(logArea);
+	
 		
 		
 		rightPane.add(dummyLabel);
@@ -355,7 +404,7 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		
 		
 		 
-		
+	
 		
 		
 		/*to actually launch the program*/
