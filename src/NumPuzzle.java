@@ -184,7 +184,7 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 				
 				puzzleDimension(gameSize, dimSize);
 				
-				playingPane.validate();
+				
 				playingPane.repaint();
 			}
 		};
