@@ -8,20 +8,19 @@ CLS
 :: LOCAL VARIABLES ....................................................
 SET SRCDIR=src
 SET BINDIR=bin
-SET BINOUT=game-javac.out
-SET BINERR=game-javac.err
+SET BINOUT=puzzle-javac.out
+SET BINERR=puzzle-javac.err
 SET JARNAME=NumPuzzle.jar
-SET JAROUT=game-jar.out
-SET JARERR=game-jar.err
+SET JAROUT=puzzle-jar.out
+SET JARERR=puzzle-jar.err
 SET DOCDIR=doc
-SET DOCPACK=game
-SET DOCOUT=game-javadoc.out
-SET DOCERR=game-javadoc.err
-SET MAINCLASSSRC=src/NumPuzzle.java
-SET MAINCLASSBIN=Main.NumPuzzle
+SET DOCPACK=puzzle
+SET DOCOUT=puzzle-javadoc.out
+SET DOCERR=puzzle-javadoc.err
+SET MAINCLASSSRC=src/puzzle/NumPuzzle.java
+SET MAINCLASSBIN=puzzle.NumPuzzle
 @echo off
 ECHO " _________________________________ "
-ECHO "|     __    _  ___    ___  _      |"
 ECHO "|    |  |  / \ \  \  /  / / \     |"
 ECHO "|    |  | /   \ \  \/  / /   \    |"
 ECHO "|    |  |/  _  \ \    / /  _  \   |"
@@ -45,7 +44,7 @@ jar cvfe %JARNAME% %MAINCLASSBIN% . > %JAROUT% 2> %JARERR%
 
 ECHO "3. Creating Javadoc ..............."
 cd ..
-javadoc -cp ".;%BINDIR%" %DOCDIR% -sourcepath %SRCDIR% -subpackages %DOCPACK% > %DOCOUT% 2> %DOCERR%
+javadoc -cp ".;%BINDIR%" -d %DOCDIR% -sourcepath %SRCDIR% -subpackages %DOCPACK% > %DOCOUT% 2> %DOCERR%
 
 cd bin
 ECHO "4. Running Jar ...................."

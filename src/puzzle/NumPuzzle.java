@@ -1,3 +1,4 @@
+package puzzle;
 import java.awt.BorderLayout;
 import java.awt.Checkbox;
 import java.awt.Color;
