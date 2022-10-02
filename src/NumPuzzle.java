@@ -53,8 +53,12 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 	JButton btn6;JButton btn7;JButton btn8;JButton btn9;JButton btn10;
 	JButton btn11;JButton btn12;JButton btn13;JButton btn14;JButton btn15;
 	JButton btn16;JButton btn17;JButton btn18;JButton btn19;JButton btn20;
+<<<<<<< HEAD
 	JButton btn21;JButton btn22;JButton btn23;JButton btn24;
 	final JButton btn25 = new JButton("");;
+=======
+	JButton btn21;JButton btn22;JButton btn23;JButton btn24;JButton btn25;
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
 	
 	JButton startButton = new JButton("Start");
 	JButton restartButton = new JButton("Restart");
@@ -64,7 +68,10 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 	JButton randButton = new JButton("Shuffle");
 	JButton hideButton = new JButton("Hide");
 	JButton finButton = new JButton("Finish");
+<<<<<<< HEAD
 	
+=======
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
 	
 	
 	/*Menu variables*/
@@ -72,16 +79,12 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 	private JMenuItem gameItem, helpItem;
 	
 	
-	
 	/*Label variables*/
 	private JLabel timeLabel,scoreLabel,logoLabel,iconLabel;
 	
 	
-	
 //	/*check box for mode*/
 //	private Checkbox modeCheckBox = new Checkbox("Mode :");
-	
-	
 	
 	
 	/*Options for game*/
@@ -94,7 +97,11 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 	private JComboBox gameOptionsList;
 	
 	/*Variable*/
+<<<<<<< HEAD
 	private int dimSize = 3;
+=======
+	private int dimSize;
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
 	private String gameSize;
 	private String textValue;
 	
@@ -108,17 +115,18 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 	private JTextField pointDisplay;
 	
 	
-	
 	/*text field for history(log)*/
 	private JTextArea logArea;
-	
-	
 	
 	
 	/*method to start*/
 	public NumPuzzle() {
 		setAndLaunch();
+<<<<<<< HEAD
 		puzzleDimension( dimSize);
+=======
+		puzzleDimension(dimSize);
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
 	}
 	
 	
@@ -182,7 +190,11 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		btn22 = new JButton("22");
 		btn23 = new JButton("23");
 		btn24 = new JButton("24");
+<<<<<<< HEAD
 		
+=======
+		btn25 = new JButton("");
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
 		
 		/*Putting values in array*/
 		btnArray = new JButton[25];
@@ -215,16 +227,26 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		for(int i = 0; i<25;i++) {
 			btnArray[i].setBackground(new Color(228,160,016));
 		}
+<<<<<<< HEAD
 		
 	
+=======
+		btnArray[24].setBackground(new Color(203,208,204));
+		
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
 		
 		rightPane.setBounds(670,0,400,850);
 		rightPane.setBackground(new Color(231,235,218));
 		rightPane.add(clearButton);
 
+<<<<<<< HEAD
 		clearButton.setBounds(650,400,10,10);
 
 		clearButton.setBounds(140,600,100,50);
+=======
+		clearButton.setBounds(140,600,100,50);
+		clearButton.setBackground(new Color(228,160,016));
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
 
 		
 		/*option list for the size of the game*/
@@ -236,9 +258,12 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		gameOptionsList.setRenderer(centerRenderer);
 		
 		
+<<<<<<< HEAD
 		
 		
 		
+=======
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
 		gameOptionsList.addActionListener(cbActionListener);
 		
 		
@@ -276,7 +301,10 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		rightPane.add(r1);rightPane.add(r2);
 		
 		
+<<<<<<< HEAD
 		
+=======
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
 		/*Buttons*/
 		saveButton.setBounds(55,230,80,50);
 		saveButton.setBackground(new Color(228,160,016));
@@ -299,10 +327,14 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 					for(int i = 0 ; i<playingArray.length; i++)
 						playingPane.add(playingArray[i]);
 					playingPane.revalidate();
+<<<<<<< HEAD
 				}
 				
 				
 				
+=======
+				}		
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
 			}
 		};
 		randButton.setBounds(245,230,80,50);
@@ -319,7 +351,10 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		rightPane.add(hideButton);
 		
 		
+<<<<<<< HEAD
 		
+=======
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
 		ActionListener typeActionListener = new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -337,12 +372,16 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 					System.out.println("text");
 					if(textValue != null)
 						putText(textValue,dimSize);
+<<<<<<< HEAD
 					break;
+=======
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
 					
 				default:
 					System.out.println("df");
 					
 					puzzleDimension(dimSize);	
+<<<<<<< HEAD
 				}
 				
 				
@@ -353,6 +392,12 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		
 		
 		
+=======
+				}		
+			}
+		};
+		
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
 
 		/*type selection here*/
 		typeOptionList = new JComboBox(typeOption);
@@ -363,7 +408,10 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		rightPane.add(typeOptionList);
 		
 		
+<<<<<<< HEAD
 		
+=======
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
 		JLabel typeTitle = new JLabel("Type : ");
 		typeTitle.setFont(new Font("Sansserif", Font.BOLD, 15));
 		typeTitle.setBounds(45, 380, 55, 30);
@@ -402,13 +450,21 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		inputText.addActionListener(new ActionListener() {
 		      public void actionPerformed(ActionEvent e) {
 		        textValue = inputText.getText();
+<<<<<<< HEAD
+=======
+		        putText(textValue,dimSize);
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
 		      }
 		    });
 		rightPane.add(inputText);
 		
+<<<<<<< HEAD
 		
 		
 		
+=======
+			
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
 		/*log history area*/
 		logArea = new JTextArea("Your move");		
 		logArea.setBounds(200,380,130,150);
@@ -442,21 +498,31 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		playingPane.removeAll();
 		switch(dimSize) {
 			case 2:
+<<<<<<< HEAD
 				
+=======
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
 				putNumber(dimSize);
 				playingPane.revalidate();
 				answerArray = playingArray;
 				playingPane.setLayout(new GridLayout(2,2,4,4));
+<<<<<<< HEAD
 				
+=======
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
 				break;
 			case 3:
 				putNumber(dimSize);
 				playingPane.revalidate();
 				answerArray = playingArray;
 				playingPane.setLayout(new GridLayout(3,3,4,4));
+<<<<<<< HEAD
 				
 				break;
 				
+=======
+				break;
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
 			case 4:
 				putNumber(dimSize);
 				answerArray = playingArray;
@@ -470,8 +536,11 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 				playingPane.revalidate();
 				break;
 			default:
+<<<<<<< HEAD
 				
 				
+=======
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
 				playingPane.add(btn1);
 				playingPane.add(btn2);
 				playingPane.add(btn3);
@@ -482,6 +551,7 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 				playingPane.add(btn8);
 				playingPane.add(btn25);
 				playingPane.setLayout(new GridLayout(3,3,4,4));
+<<<<<<< HEAD
 				break;
 
 				
@@ -489,6 +559,9 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 				
 				
 				
+=======
+				break;		
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
 		}
 
 	}
@@ -507,7 +580,6 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 	private String score_String = String.format("%d", score);
 	
 	
-	
 	ImageIcon logo = new ImageIcon("Logo.gif");
 	
 	
@@ -523,9 +595,12 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 			//System.out.println(dimSize);
 			
 			puzzleDimension(dimSize);
+<<<<<<< HEAD
 			
 			
 			
+=======
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
 		}
 	};
 	
@@ -552,6 +627,7 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		playingPane.add(btn25);
 		answerArray = playingArray;
 		playingPane.revalidate();
+<<<<<<< HEAD
 		
 		
 		
@@ -566,12 +642,24 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 			
 			playingArray[i] = btnArray[i];
 			playingArray[i].setLabel(String.valueOf(i+1));
+=======
+	}
+	
+	public void putNumber(int dimSize) {
+		playingArray = new JButton[dimSize * dimSize];
+		answerArray = new JButton[dimSize* dimSize];
+		for(int i = 0 ;i <dimSize*dimSize-1;i++) {
+			playingArray[i] = btnArray[i];
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
 			playingPane.add(playingArray[i]);
 		}
 		playingArray[playingArray.length-1] = btnArray[24];
 		playingPane.add(btn25);
 		answerArray = playingArray;
+<<<<<<< HEAD
 		playingPane.repaint();
+=======
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
 	}
 	
 	public static void main(String[] args) {
@@ -582,6 +670,9 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		/*button logic*/
+<<<<<<< HEAD
 		
+=======
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
 	}
 }
