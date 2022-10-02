@@ -53,7 +53,9 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 	JButton btn6;JButton btn7;JButton btn8;JButton btn9;JButton btn10;
 	JButton btn11;JButton btn12;JButton btn13;JButton btn14;JButton btn15;
 	JButton btn16;JButton btn17;JButton btn18;JButton btn19;JButton btn20;
-	JButton btn21;JButton btn22;JButton btn23;JButton btn24;JButton btn25;
+	JButton btn21;JButton btn22;JButton btn23;JButton btn24;
+	final JButton btn25 = new JButton("");
+
 	
 	JButton startButton = new JButton("Start");
 	JButton restartButton = new JButton("Restart");
@@ -63,7 +65,7 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 	JButton randButton = new JButton("Shuffle");
 	JButton hideButton = new JButton("Hide");
 	JButton finButton = new JButton("Finish");
-	
+
 	
 	/*Menu variables*/
 	private JMenu menu;
@@ -84,11 +86,13 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 	
 	
 	/*Combobox for type options, game options*/
-	private JComboBox typeOptionList;
-	private JComboBox gameOptionsList;
+	private JComboBox<String> typeOptionList;
+	private JComboBox<String> gameOptionsList;
 	
 	/*Variable*/
-	private int dimSize;
+
+	private int dimSize = 3;
+
 	private String gameSize;
 	private String textValue;
 	
@@ -173,8 +177,8 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		btn22 = new JButton("22");
 		btn23 = new JButton("23");
 		btn24 = new JButton("24");
-		btn25 = new JButton("");
-		
+
+
 		/*Putting values in array*/
 		btnArray = new JButton[25];
 		btnArray[0] = btn1;
@@ -206,17 +210,24 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		for(int i = 0; i<25;i++) {
 			btnArray[i].setBackground(new Color(228,160,016));
 		}
+
+		
 		btnArray[24].setBackground(new Color(203,208,204));
 		
-		
+
 		rightPane.setBounds(670,0,400,850);
 		rightPane.setBackground(new Color(231,235,218));
 		rightPane.add(clearButton);
 
+
+		clearButton.setBounds(650,400,10,10);
+
+		clearButton.setBounds(140,600,100,50);
+
 		clearButton.setBounds(140,600,100,50);
 		clearButton.setBackground(new Color(228,160,016));
 
-		
+
 		/*option list for the size of the game*/
 		gameOptionsList = new JComboBox<String>(sizeOptions);
 		//System.out.println(gameOptionsList.getSelectedItem());
@@ -262,7 +273,7 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		
 		rightPane.add(r1);rightPane.add(r2);
 		
-		
+
 		/*Buttons*/
 		saveButton.setBounds(55,230,80,50);
 		saveButton.setBackground(new Color(228,160,016));
@@ -271,6 +282,7 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		loadButton.setBounds(150,230,80,50);
 		loadButton.setBackground(new Color(228,160,016));
 		rightPane.add(loadButton);
+		
 		
 		ActionListener shuffleActionListener = new ActionListener() {
 			@Override
@@ -285,9 +297,11 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 					for(int i = 0 ; i<playingArray.length; i++)
 						playingPane.add(playingArray[i]);
 					playingPane.revalidate();
-				}		
-			}
+				}
+			}		
 		};
+	
+		
 		randButton.setBounds(245,230,80,50);
 		randButton.setBackground(new Color(228,160,016));
 		randButton.addActionListener(shuffleActionListener);
@@ -304,33 +318,30 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		
 		ActionListener typeActionListener = new ActionListener() {
 			@Override
-			public void actionPerformed(ActionEvent e) {
-				
+			public void actionPerformed(ActionEvent e) {				
 				String typeOptionSelected;
 				typeOptionSelected = (String) typeOptionList.getSelectedItem();
 				
 				switch(typeOptionSelected) {
 				case "Num":
-					System.out.println("Num");
+//					System.out.println("Num");
 					puzzleDimension(dimSize);
-					break;
-				
+					break;	
 				case "Text":
-					System.out.println("text");
+//					System.out.println("text");
 					if(textValue != null)
 						putText(textValue,dimSize);
-					
+					break;
 				default:
-					System.out.println("df");
-					
+//					System.out.println("df");
 					puzzleDimension(dimSize);	
 				}		
 			}
 		};
 		
-
+		
 		/*type selection here*/
-		typeOptionList = new JComboBox(typeOption);
+		typeOptionList = new JComboBox<String>(typeOption);
 		typeOptionList.setFont(new Font("Sansserif", Font.BOLD, 15));
 		typeOptionList.setRenderer(centerRenderer);
 		typeOptionList.setBounds(100,380,70,30);
@@ -348,16 +359,20 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		timeDisplay = new JTextField("0");
 		pointDisplay = new JTextField("0");
 		
+		
 		timeDisplay.setFont(new Font("Sansserif", Font.BOLD, 15));
 		timeDisplay.setEditable(false);
 		pointDisplay.setFont(new Font("Sansserif", Font.BOLD, 15));
 		pointDisplay.setEditable(false);
 		
+		
 		timeDisplay.setBounds(100,420,70,30);
 		pointDisplay.setBounds(100,460,70,30);
 		
+		
 		JLabel timeTitle = new JLabel("Time");
 		JLabel pointTitle = new JLabel("Point");
+		
 		
 		timeTitle.setFont(new Font("Sansserif", Font.BOLD, 15));
 		pointTitle.setFont(new Font("Sansserif", Font.BOLD, 15));
@@ -375,14 +390,12 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		inputText.setFont(new Font("Sansserif", Font.BOLD, 13));
 		inputText.addActionListener(new ActionListener() {
 		      public void actionPerformed(ActionEvent e) {
-		        textValue = inputText.getText();
-		        putText(textValue,dimSize);
+		    	  textValue = inputText.getText(); 
 		      }
-		    });
-		rightPane.add(inputText);
+		});  
+		  
 		
-			
-		/*log history area*/
+		rightPane.add(inputText);
 		logArea = new JTextArea("Your move");		
 		logArea.setBounds(200,380,130,150);
 		logArea.setEditable(false);
@@ -411,7 +424,6 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 	
 	private void puzzleDimension( int dimSize) {
 		/*center panel for playing*/
-		
 		playingPane.removeAll();
 		switch(dimSize) {
 			case 2:
@@ -449,10 +461,10 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 				playingPane.add(btn8);
 				playingPane.add(btn25);
 				playingPane.setLayout(new GridLayout(3,3,4,4));
-				break;		
+				break;			
 		}
-
 	}
+	
 	
 	private Timer timer = new Timer(1000, new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
@@ -460,6 +472,7 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 			seconds_String = String.format("%01d", seconds);
 		}
 	});
+	
 	
 	private int score;
 	private int seconds = 0;
@@ -475,17 +488,15 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			
-			
 			gameSize = (String) gameOptionsList.getSelectedItem();
 			
 			//System.out.println(gameSize);
 			dimSize = Character.getNumericValue(gameSize.charAt(0));
 			//System.out.println(dimSize);
 			
-			puzzleDimension(dimSize);
+			puzzleDimension(dimSize);	
 		}
 	};
-	
 	
 	
 	public void putText(String textValue, int dimSize) {
@@ -508,25 +519,33 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		playingArray[playingArray.length-1] = btnArray[24];
 		playingPane.add(btn25);
 		answerArray = playingArray;
-		playingPane.revalidate();
+		playingPane.revalidate();	
 	}
 	
+	
 	public void putNumber(int dimSize) {
+		playingPane.revalidate();
 		playingArray = new JButton[dimSize * dimSize];
 		answerArray = new JButton[dimSize* dimSize];
 		for(int i = 0 ;i <dimSize*dimSize-1;i++) {
+			
 			playingArray[i] = btnArray[i];
+			String.valueOf(i+1);
 			playingPane.add(playingArray[i]);
 		}
 		playingArray[playingArray.length-1] = btnArray[24];
 		playingPane.add(btn25);
 		answerArray = playingArray;
+
+		playingPane.repaint();
 	}
+	
 	
 	public static void main(String[] args) {
 		new NumPuzzle();
 	}
 
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
