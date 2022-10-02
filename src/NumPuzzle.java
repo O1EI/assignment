@@ -53,9 +53,18 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 	JButton btn6;JButton btn7;JButton btn8;JButton btn9;JButton btn10;
 	JButton btn11;JButton btn12;JButton btn13;JButton btn14;JButton btn15;
 	JButton btn16;JButton btn17;JButton btn18;JButton btn19;JButton btn20;
+<<<<<<< HEAD
 	JButton btn21;JButton btn22;JButton btn23;JButton btn24;
 	final JButton btn25 = new JButton("");
 
+=======
+<<<<<<< HEAD
+	JButton btn21;JButton btn22;JButton btn23;JButton btn24;
+	final JButton btn25 = new JButton("");;
+=======
+	JButton btn21;JButton btn22;JButton btn23;JButton btn24;JButton btn25;
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
+>>>>>>> branch 'master' of https://github.com/O1EI/NumberPuzzle.git
 	
 	JButton startButton = new JButton("Start");
 	JButton restartButton = new JButton("Restart");
@@ -65,7 +74,15 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 	JButton randButton = new JButton("Shuffle");
 	JButton hideButton = new JButton("Hide");
 	JButton finButton = new JButton("Finish");
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+	
+=======
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
+	
+>>>>>>> branch 'master' of https://github.com/O1EI/NumberPuzzle.git
 	
 	/*Menu variables*/
 	private JMenu menu;
@@ -90,9 +107,17 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 	private JComboBox<String> gameOptionsList;
 	
 	/*Variable*/
+<<<<<<< HEAD
 
 	private int dimSize = 3;
 
+=======
+<<<<<<< HEAD
+	private int dimSize = 3;
+=======
+	private int dimSize;
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
+>>>>>>> branch 'master' of https://github.com/O1EI/NumberPuzzle.git
 	private String gameSize;
 	private String textValue;
 	
@@ -113,7 +138,11 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 	/*method to start*/
 	public NumPuzzle() {
 		setAndLaunch();
+<<<<<<< HEAD
+		puzzleDimension( dimSize);
+=======
 		puzzleDimension(dimSize);
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
 	}
 	
 	
@@ -177,8 +206,17 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		btn22 = new JButton("22");
 		btn23 = new JButton("23");
 		btn24 = new JButton("24");
+<<<<<<< HEAD
 
 
+=======
+<<<<<<< HEAD
+		
+=======
+		btn25 = new JButton("");
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
+		
+>>>>>>> branch 'master' of https://github.com/O1EI/NumberPuzzle.git
 		/*Putting values in array*/
 		btnArray = new JButton[25];
 		btnArray[0] = btn1;
@@ -210,22 +248,43 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		for(int i = 0; i<25;i++) {
 			btnArray[i].setBackground(new Color(228,160,016));
 		}
+<<<<<<< HEAD
 
 		
+=======
+<<<<<<< HEAD
+		
+	
+=======
+>>>>>>> branch 'master' of https://github.com/O1EI/NumberPuzzle.git
 		btnArray[24].setBackground(new Color(203,208,204));
 		
+<<<<<<< HEAD
 
+=======
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
+		
+>>>>>>> branch 'master' of https://github.com/O1EI/NumberPuzzle.git
 		rightPane.setBounds(670,0,400,850);
 		rightPane.setBackground(new Color(231,235,218));
 		rightPane.add(clearButton);
 
+<<<<<<< HEAD
 
 		clearButton.setBounds(650,400,10,10);
 
 		clearButton.setBounds(140,600,100,50);
 
+=======
+<<<<<<< HEAD
+		clearButton.setBounds(650,400,10,10);
+
+		clearButton.setBounds(140,600,100,50);
+=======
+>>>>>>> branch 'master' of https://github.com/O1EI/NumberPuzzle.git
 		clearButton.setBounds(140,600,100,50);
 		clearButton.setBackground(new Color(228,160,016));
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
 
 
 		/*option list for the size of the game*/
@@ -237,6 +296,12 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		gameOptionsList.setRenderer(centerRenderer);
 		
 		
+<<<<<<< HEAD
+		
+		
+		
+=======
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
 		gameOptionsList.addActionListener(cbActionListener);
 		
 		
@@ -273,7 +338,15 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		
 		rightPane.add(r1);rightPane.add(r2);
 		
+<<<<<<< HEAD
 
+=======
+		
+<<<<<<< HEAD
+		
+=======
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
+>>>>>>> branch 'master' of https://github.com/O1EI/NumberPuzzle.git
 		/*Buttons*/
 		saveButton.setBounds(55,230,80,50);
 		saveButton.setBackground(new Color(228,160,016));
@@ -297,8 +370,20 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 					for(int i = 0 ; i<playingArray.length; i++)
 						playingPane.add(playingArray[i]);
 					playingPane.revalidate();
+<<<<<<< HEAD
 				}
 			}		
+=======
+<<<<<<< HEAD
+				}
+				
+				
+				
+=======
+				}		
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
+			}
+>>>>>>> branch 'master' of https://github.com/O1EI/NumberPuzzle.git
 		};
 	
 		
@@ -316,6 +401,10 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		rightPane.add(hideButton);
 		
 		
+<<<<<<< HEAD
+		
+=======
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
 		ActionListener typeActionListener = new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {				
@@ -331,15 +420,40 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 //					System.out.println("text");
 					if(textValue != null)
 						putText(textValue,dimSize);
+<<<<<<< HEAD
 					break;
+=======
+<<<<<<< HEAD
+					break;
+=======
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
+					
+>>>>>>> branch 'master' of https://github.com/O1EI/NumberPuzzle.git
 				default:
 //					System.out.println("df");
 					puzzleDimension(dimSize);	
-				}		
+<<<<<<< HEAD
+				}
+				
+				
+				
+				
 			}
 		};
 		
 		
+		
+=======
+				}		
+			}
+		};
+		
+<<<<<<< HEAD
+		
+=======
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
+
+>>>>>>> branch 'master' of https://github.com/O1EI/NumberPuzzle.git
 		/*type selection here*/
 		typeOptionList = new JComboBox<String>(typeOption);
 		typeOptionList.setFont(new Font("Sansserif", Font.BOLD, 15));
@@ -349,6 +463,10 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		rightPane.add(typeOptionList);
 		
 		
+<<<<<<< HEAD
+		
+=======
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
 		JLabel typeTitle = new JLabel("Type : ");
 		typeTitle.setFont(new Font("Sansserif", Font.BOLD, 15));
 		typeTitle.setBounds(45, 380, 55, 30);
@@ -390,12 +508,31 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		inputText.setFont(new Font("Sansserif", Font.BOLD, 13));
 		inputText.addActionListener(new ActionListener() {
 		      public void actionPerformed(ActionEvent e) {
+<<<<<<< HEAD
 		    	  textValue = inputText.getText(); 
+=======
+		        textValue = inputText.getText();
+<<<<<<< HEAD
+=======
+		        putText(textValue,dimSize);
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
+>>>>>>> branch 'master' of https://github.com/O1EI/NumberPuzzle.git
 		      }
 		});  
 		  
 		
+<<<<<<< HEAD
 		rightPane.add(inputText);
+=======
+<<<<<<< HEAD
+		
+		
+		
+=======
+			
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
+		/*log history area*/
+>>>>>>> branch 'master' of https://github.com/O1EI/NumberPuzzle.git
 		logArea = new JTextArea("Your move");		
 		logArea.setBounds(200,380,130,150);
 		logArea.setEditable(false);
@@ -427,17 +564,31 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		playingPane.removeAll();
 		switch(dimSize) {
 			case 2:
+<<<<<<< HEAD
+				
+=======
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
 				putNumber(dimSize);
 				playingPane.revalidate();
 				answerArray = playingArray;
 				playingPane.setLayout(new GridLayout(2,2,4,4));
+<<<<<<< HEAD
+				
+=======
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
 				break;
 			case 3:
 				putNumber(dimSize);
 				playingPane.revalidate();
 				answerArray = playingArray;
 				playingPane.setLayout(new GridLayout(3,3,4,4));
+<<<<<<< HEAD
+				
 				break;
+				
+=======
+				break;
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
 			case 4:
 				putNumber(dimSize);
 				answerArray = playingArray;
@@ -451,6 +602,11 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 				playingPane.revalidate();
 				break;
 			default:
+<<<<<<< HEAD
+				
+				
+=======
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
 				playingPane.add(btn1);
 				playingPane.add(btn2);
 				playingPane.add(btn3);
@@ -461,7 +617,21 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 				playingPane.add(btn8);
 				playingPane.add(btn25);
 				playingPane.setLayout(new GridLayout(3,3,4,4));
+<<<<<<< HEAD
 				break;			
+=======
+<<<<<<< HEAD
+				break;
+
+				
+
+				
+				
+				
+=======
+				break;		
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
+>>>>>>> branch 'master' of https://github.com/O1EI/NumberPuzzle.git
 		}
 	}
 	
@@ -494,7 +664,17 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 			dimSize = Character.getNumericValue(gameSize.charAt(0));
 			//System.out.println(dimSize);
 			
+<<<<<<< HEAD
 			puzzleDimension(dimSize);	
+=======
+			puzzleDimension(dimSize);
+<<<<<<< HEAD
+			
+			
+			
+=======
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
+>>>>>>> branch 'master' of https://github.com/O1EI/NumberPuzzle.git
 		}
 	};
 	
@@ -519,7 +699,27 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		playingArray[playingArray.length-1] = btnArray[24];
 		playingPane.add(btn25);
 		answerArray = playingArray;
+<<<<<<< HEAD
 		playingPane.revalidate();	
+=======
+		playingPane.revalidate();
+<<<<<<< HEAD
+		
+		
+		
+		
+	}
+	
+	public void putNumber(int dimSize) {
+		playingPane.revalidate();
+		playingArray = new JButton[dimSize * dimSize];
+		answerArray = new JButton[dimSize* dimSize];
+		for(int i = 0 ;i <dimSize*dimSize-1;i++) {
+			
+			playingArray[i] = btnArray[i];
+			playingArray[i].setLabel(String.valueOf(i+1));
+=======
+>>>>>>> branch 'master' of https://github.com/O1EI/NumberPuzzle.git
 	}
 	
 	
@@ -530,14 +730,25 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		for(int i = 0 ;i <dimSize*dimSize-1;i++) {
 			
 			playingArray[i] = btnArray[i];
+<<<<<<< HEAD
 			String.valueOf(i+1);
+=======
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
+>>>>>>> branch 'master' of https://github.com/O1EI/NumberPuzzle.git
 			playingPane.add(playingArray[i]);
 		}
 		playingArray[playingArray.length-1] = btnArray[24];
 		playingPane.add(btn25);
 		answerArray = playingArray;
+<<<<<<< HEAD
 
 		playingPane.repaint();
+=======
+<<<<<<< HEAD
+		playingPane.repaint();
+=======
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
+>>>>>>> branch 'master' of https://github.com/O1EI/NumberPuzzle.git
 	}
 	
 	
@@ -550,5 +761,9 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		/*button logic*/
+<<<<<<< HEAD
+		
+=======
+>>>>>>> 42bf15a623a2c34a7e669d2164d43be6d0a06f7c
 	}
 }
