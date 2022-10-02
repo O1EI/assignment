@@ -499,6 +499,7 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 	};
 	
 	
+	@SuppressWarnings("deprecation")
 	public void putText(String textValue, int dimSize) {
 		String[] textArray = new String[25];
 		for(int i = 0 ; i < 25;i++) {

@@ -18,7 +18,7 @@ SET DOCPACK=game
 SET DOCOUT=game-javadoc.out
 SET DOCERR=game-javadoc.err
 SET MAINCLASSSRC=src/NumPuzzle.java
-SET MAINCLASSBIN=bin/NumPuzzle.class
+SET MAINCLASSBIN=Main.NumPuzzle
 @echo off
 ECHO " _________________________________ "
 ECHO "|     __    _  ___    ___  _      |"
@@ -34,7 +34,7 @@ ECHO "                                   "
 ECHO "[ASSIGNMENT SCRIPT ---------------]"
 
 ECHO "1. Compiling ......................"
-javac -Xlint -cp ".;%SRCDIR%;%JAVAFXDIR%/*" %MAINCLASSSRC% -d %BINDIR% > %BINOUT% 2> %BINERR%
+javac -Xlint -cp ".;%SRCDIR%" %MAINCLASSSRC% -d %BINDIR% > %BINOUT% 2> %BINERR%
 
 :: ECHO "Running  ........................."
 :: start java -cp ".;%BINDIR%;%JAVAFXDIR%/*" %MAINCLASSBIN%
@@ -45,11 +45,11 @@ jar cvfe %JARNAME% %MAINCLASSBIN% . > %JAROUT% 2> %JARERR%
 
 ECHO "3. Creating Javadoc ..............."
 cd ..
-javadoc -cp ".;%BINDIR%;%JAVAFXDIR%/*" %DOCDIR% -sourcepath %SRCDIR% -subpackages %DOCPACK% > %DOCOUT% 2> %DOCERR%
+javadoc -cp ".;%BINDIR%" %DOCDIR% -sourcepath %SRCDIR% -subpackages %DOCPACK% > %DOCOUT% 2> %DOCERR%
 
 cd bin
 ECHO "4. Running Jar ...................."
-start java --module-path "%JAVAFXDIR%" --add-modules %MODULELIST% -jar %JARNAME%
+start java -jar %JARNAME%
 cd ..
 
 ECHO "[END OF SCRIPT -------------------]"
