@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.text.DecimalFormat;
 import java.util.Random;
 
 import javax.swing.BorderFactory;
@@ -77,13 +78,13 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 	private JLabel timeLabel,scoreLabel,logoLabel,iconLabel;
 	
 	
-//	/*check box for mode*/
-//	private Checkbox modeCheckBox = new Checkbox("Mode :");
+	/*check box for mode*/
+	private Checkbox modeCheckBox = new Checkbox("Mode :");
 	
 	
 	/*Options for game*/
 	private String sizeOptions[] = 	{"2x2","3x3","4x4","5x5"};	
-	private String typeOption[] = {"Text","Num"};
+	private String typeOption[] = {"Num","Text"};
 	
 	
 	/*Combobox for type options, game options*/
@@ -96,6 +97,12 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 
 	private String gameSize;
 	private String textValue;
+	
+	//Time variables
+	private Timer timer;
+	private int seconds = 0, minutes = 0;
+	private String dSeconds, dMinutes;
+	DecimalFormat dFormat = new DecimalFormat("00");
 	
 	/*Radio button*/
 	private JRadioButton r1;
@@ -127,8 +134,8 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		iconLabel.setBounds(50,30,300,60);
 		iconLabel.setBackground(new Color(203,208,204));
 		
-//		timeDisplay = new JTextField();
-//		timeDisplay.setFont(modeFont);
+		timeDisplay = new JTextField();
+		timeDisplay.setFont(modeFont);
 		
 		
 		frame = new JFrame("Fun Number Puzzle made by Jaeho Oh and Nathan Chen");//title
@@ -214,12 +221,12 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 
 		
 		btnArray[24].setBackground(new Color(203,208,204));
-		
+				
 
 		rightPane.setBounds(670,0,400,850);
 		rightPane.setBackground(new Color(231,235,218));
 		rightPane.add(clearButton);
-
+		
 
 		clearButton.setBounds(650,400,10,10);
 
@@ -231,7 +238,7 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 
 		/*option list for the size of the game*/
 		gameOptionsList = new JComboBox<String>(sizeOptions);
-		//System.out.println(gameOptionsList.getSelectedItem());
+//		System.out.println(gameOptionsList.getSelectedItem());
 		DefaultListCellRenderer centerRenderer = new DefaultListCellRenderer();
 		centerRenderer.setHorizontalAlignment(DefaultListCellRenderer.CENTER);
 		gameOptionsList.setFont(modeFont);
@@ -380,8 +387,10 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		pointTitle.setBounds(45,460,55,30);
 		
 		
-		rightPane.add(timeDisplay);rightPane.add(pointDisplay);
-		rightPane.add(timeTitle);rightPane.add(pointTitle);
+		rightPane.add(timeDisplay);
+		rightPane.add(pointDisplay);
+		rightPane.add(timeTitle);
+		rightPane.add(pointTitle);
 		
 		
 		/*Text input area*/
@@ -403,21 +412,6 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		logArea.setFont(new Font("Sansserif", Font.BOLD, 15));
 		rightPane.add(logArea);
 		
-		ActionListener startActionListener = new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {				
-				//System.out.println("Game Start");
-				hideButton.setEnabled(false);
-				typeOptionList.setEnabled(false);
-				gameOptionsList.setEnabled(true);
-				inputText.setEnabled(false);
-				loadButton.setEnabled(false);
-				startButton.setText("Pause");
-			}
-		};
-		
-		startButton.addActionListener(startActionListener);
-		
 		ActionListener radioDesignActionListener = new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {				
@@ -428,6 +422,10 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 				inputText.setEnabled(true);
 				startButton.setText("Start");
 				loadButton.setEnabled(true);
+				timer.stop();
+				seconds = 0;
+				minutes = 0;
+				timeDisplay.setText("0:00");
 			}
 		};
 		
@@ -443,10 +441,50 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 				inputText.setEnabled(false);
 				startButton.setText("Start");
 				loadButton.setEnabled(true);
+				timer.stop();
+				seconds = 0;
+				minutes = 0;
+				timeDisplay.setText("0:00");
 			}
 		};
 		
 		r2.addActionListener(radioPlayActionListener);
+		
+		timer = new Timer(1000, new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				seconds++;
+				dSeconds = dFormat.format(seconds);
+				dMinutes = dFormat.format(minutes);
+				timeDisplay.setText(minutes + ":" + dSeconds);
+				
+				if(seconds == 60) {
+					seconds = 0;
+					minutes++;
+					
+					dSeconds = dFormat.format(seconds);
+					dMinutes = dFormat.format(minutes);
+					timeDisplay.setText(minutes + ":" + dSeconds);
+				}
+			}
+		});
+		
+		ActionListener startActionListener = new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {				
+				//System.out.println("Game Start");
+				hideButton.setEnabled(false);
+				typeOptionList.setEnabled(false);
+				gameOptionsList.setEnabled(true);
+				inputText.setEnabled(false);
+				loadButton.setEnabled(false);
+				startButton.setText("Pause");
+				timer.start();
+			}
+		};
+		
+		startButton.addActionListener(startActionListener);
+		
 		
 		rightPane.add(dummyLabel);
 		
@@ -510,18 +548,15 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 	}
 	
 	
-	private Timer timer = new Timer(1000, new ActionListener() {
-		public void actionPerformed(ActionEvent e) {
-			seconds++;
-			seconds_String = String.format("%01d", seconds);
-			timeDisplay = new JTextField(seconds_String);
-		}
-	});
-	
-	
+//	private Timer timer = new Timer(1000, new ActionListener() {
+//		public void actionPerformed(ActionEvent e) {
+//			seconds++;
+//			seconds_String = String.format("%01d", seconds);
+//		}
+//	});
 	
 	private int score;
-	private int seconds = 0;
+	//private int seconds = 0;
 	private boolean started = false;
 	private String seconds_String = String.format("%01d", seconds);
 	private String score_String = String.format("%d", score);
