@@ -127,8 +127,8 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		iconLabel.setBounds(50,30,300,60);
 		iconLabel.setBackground(new Color(203,208,204));
 		
-		timeDisplay = new JTextField();
-		timeDisplay.setFont(modeFont);
+//		timeDisplay = new JTextField();
+//		timeDisplay.setFont(modeFont);
 		
 		
 		frame = new JFrame("Fun Number Puzzle made by Jaeho Oh and Nathan Chen");//title
@@ -316,7 +316,6 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		hideButton.setBackground(new Color(228,160,016));
 		rightPane.add(hideButton);
 		
-		
 		ActionListener typeActionListener = new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {				
@@ -357,7 +356,7 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		
 		
 		/*time and point displays*/
-		timeDisplay = new JTextField("0");
+		timeDisplay = new JTextField("0:00");
 		pointDisplay = new JTextField("0");
 		
 		
@@ -393,7 +392,7 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		      public void actionPerformed(ActionEvent e) {
 		    	  textValue = inputText.getText(); 
 		      }
-		});  
+		});
 		  
 		
 		rightPane.add(inputText);
@@ -403,7 +402,51 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		logArea.setBackground(new Color(203,208,204));
 		logArea.setFont(new Font("Sansserif", Font.BOLD, 15));
 		rightPane.add(logArea);
-	
+		
+		ActionListener startActionListener = new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {				
+				//System.out.println("Game Start");
+				hideButton.setEnabled(false);
+				typeOptionList.setEnabled(false);
+				gameOptionsList.setEnabled(true);
+				inputText.setEnabled(false);
+				loadButton.setEnabled(false);
+				startButton.setText("Pause");
+			}
+		};
+		
+		startButton.addActionListener(startActionListener);
+		
+		ActionListener radioDesignActionListener = new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {				
+				//System.out.println("Design");
+				hideButton.setEnabled(true);
+				typeOptionList.setEnabled(true);
+				gameOptionsList.setEnabled(true);
+				inputText.setEnabled(true);
+				startButton.setText("Start");
+				loadButton.setEnabled(true);
+			}
+		};
+		
+		r1.addActionListener(radioDesignActionListener);
+		
+		ActionListener radioPlayActionListener = new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {				
+				//System.out.println("Play");
+				hideButton.setEnabled(false);
+				typeOptionList.setEnabled(false);
+				gameOptionsList.setEnabled(true);
+				inputText.setEnabled(false);
+				startButton.setText("Start");
+				loadButton.setEnabled(true);
+			}
+		};
+		
+		r2.addActionListener(radioPlayActionListener);
 		
 		rightPane.add(dummyLabel);
 		
@@ -471,8 +514,10 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			seconds++;
 			seconds_String = String.format("%01d", seconds);
+			timeDisplay = new JTextField(seconds_String);
 		}
 	});
+	
 	
 	
 	private int score;
@@ -552,5 +597,6 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		/*button logic*/
+		
 	}
 }
