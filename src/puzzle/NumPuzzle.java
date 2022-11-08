@@ -915,11 +915,915 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 		}
 		
 		if(dimSize == 4 && timer.isRunning()) {
+			if(e.getSource() == playingArray[0]) {
+				String label = playingArray[0].getLabel(); 
+				if(playingArray[1].getLabel().equals("")) { 
+					playingArray[1].setLabel(label);
+					playingArray[1].setBackground(new Color(228,160,016));
+					playingArray[0].setLabel(""); 
+					playingArray[0].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[4].getLabel().equals("")) { 
+					playingArray[4].setLabel(label);
+					playingArray[4].setBackground(new Color(228,160,016));
+					playingArray[0].setLabel("");
+					playingArray[0].setBackground(new Color(203,208,204));
+				} 
+			}
 			
+			if(e.getSource() == playingArray[1]) {
+				String label = playingArray[1].getLabel(); 
+				if(playingArray[0].getLabel().equals("")) { 
+					playingArray[0].setLabel(label);
+					playingArray[0].setBackground(new Color(228,160,016));
+					playingArray[1].setLabel(""); 
+					playingArray[1].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[2].getLabel().equals("")) { 
+					playingArray[2].setLabel(label);
+					playingArray[2].setBackground(new Color(228,160,016));
+					playingArray[1].setLabel("");
+					playingArray[1].setBackground(new Color(203,208,204));
+				}
+				if(playingArray[5].getLabel().equals("")) { 
+					playingArray[5].setLabel(label);
+					playingArray[5].setBackground(new Color(228,160,016));
+					playingArray[1].setLabel(""); 
+					playingArray[1].setBackground(new Color(203,208,204));
+				}
+			}
+			
+			if(e.getSource() == playingArray[2]) {
+				String label = playingArray[2].getLabel(); 
+				if(playingArray[1].getLabel().equals("")) { 
+					playingArray[1].setLabel(label);
+					playingArray[1].setBackground(new Color(228,160,016));
+					playingArray[2].setLabel(""); 
+					playingArray[2].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[3].getLabel().equals("")) { 
+					playingArray[3].setLabel(label);
+					playingArray[3].setBackground(new Color(228,160,016));
+					playingArray[2].setLabel("");
+					playingArray[2].setBackground(new Color(203,208,204));
+				}
+				if(playingArray[6].getLabel().equals("")) { 
+					playingArray[6].setLabel(label);
+					playingArray[6].setBackground(new Color(228,160,016));
+					playingArray[2].setLabel(""); 
+					playingArray[2].setBackground(new Color(203,208,204));
+				}
+			}
+			
+			if(e.getSource() == playingArray[3]) {
+				String label = playingArray[3].getLabel(); 
+				if(playingArray[2].getLabel().equals("")) { 
+					playingArray[2].setLabel(label);
+					playingArray[2].setBackground(new Color(228,160,016));
+					playingArray[3].setLabel(""); 
+					playingArray[3].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[7].getLabel().equals("")) { 
+					playingArray[7].setLabel(label);
+					playingArray[7].setBackground(new Color(228,160,016));
+					playingArray[3].setLabel("");
+					playingArray[3].setBackground(new Color(203,208,204));
+				}
+			}
+			
+			if(e.getSource() == playingArray[4]) {
+				String label = playingArray[4].getLabel(); 
+				if(playingArray[0].getLabel().equals("")) { 
+					playingArray[0].setLabel(label);
+					playingArray[0].setBackground(new Color(228,160,016));
+					playingArray[4].setLabel(""); 
+					playingArray[4].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[5].getLabel().equals("")) { 
+					playingArray[5].setLabel(label);
+					playingArray[5].setBackground(new Color(228,160,016));
+					playingArray[4].setLabel("");
+					playingArray[4].setBackground(new Color(203,208,204));
+				}
+				if(playingArray[8].getLabel().equals("")) { 
+					playingArray[8].setLabel(label);
+					playingArray[8].setBackground(new Color(228,160,016));
+					playingArray[4].setLabel(""); 
+					playingArray[4].setBackground(new Color(203,208,204));
+				}
+			}
+			
+			if(e.getSource() == playingArray[5]) {
+				String label = playingArray[5].getLabel(); 
+				if(playingArray[1].getLabel().equals("")) { 
+					playingArray[1].setLabel(label);
+					playingArray[1].setBackground(new Color(228,160,016));
+					playingArray[5].setLabel(""); 
+					playingArray[5].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[4].getLabel().equals("")) { 
+					playingArray[4].setLabel(label);
+					playingArray[4].setBackground(new Color(228,160,016));
+					playingArray[5].setLabel("");
+					playingArray[5].setBackground(new Color(203,208,204));
+				}
+				if(playingArray[6].getLabel().equals("")) { 
+					playingArray[6].setLabel(label);
+					playingArray[6].setBackground(new Color(228,160,016));
+					playingArray[5].setLabel(""); 
+					playingArray[5].setBackground(new Color(203,208,204));
+				}
+				if(playingArray[9].getLabel().equals("")) { 
+					playingArray[9].setLabel(label);
+					playingArray[9].setBackground(new Color(228,160,016));
+					playingArray[5].setLabel(""); 
+					playingArray[5].setBackground(new Color(203,208,204));
+				}
+			}
+			
+			if(e.getSource() == playingArray[6]) {
+				String label = playingArray[6].getLabel(); 
+				if(playingArray[2].getLabel().equals("")) { 
+					playingArray[2].setLabel(label);
+					playingArray[2].setBackground(new Color(228,160,016));
+					playingArray[6].setLabel(""); 
+					playingArray[6].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[5].getLabel().equals("")) { 
+					playingArray[5].setLabel(label);
+					playingArray[5].setBackground(new Color(228,160,016));
+					playingArray[6].setLabel("");
+					playingArray[6].setBackground(new Color(203,208,204));
+				}
+				if(playingArray[7].getLabel().equals("")) { 
+					playingArray[7].setLabel(label);
+					playingArray[7].setBackground(new Color(228,160,016));
+					playingArray[6].setLabel(""); 
+					playingArray[6].setBackground(new Color(203,208,204));
+				}
+				if(playingArray[10].getLabel().equals("")) { 
+					playingArray[10].setLabel(label);
+					playingArray[10].setBackground(new Color(228,160,016));
+					playingArray[6].setLabel(""); 
+					playingArray[6].setBackground(new Color(203,208,204));
+				}
+			}
+			
+			if(e.getSource() == playingArray[7]) {
+				String label = playingArray[7].getLabel(); 
+				if(playingArray[3].getLabel().equals("")) { 
+					playingArray[3].setLabel(label);
+					playingArray[3].setBackground(new Color(228,160,016));
+					playingArray[7].setLabel(""); 
+					playingArray[7].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[6].getLabel().equals("")) { 
+					playingArray[6].setLabel(label);
+					playingArray[6].setBackground(new Color(228,160,016));
+					playingArray[7].setLabel("");
+					playingArray[7].setBackground(new Color(203,208,204));
+				}
+				if(playingArray[11].getLabel().equals("")) { 
+					playingArray[11].setLabel(label);
+					playingArray[11].setBackground(new Color(228,160,016));
+					playingArray[7].setLabel(""); 
+					playingArray[7].setBackground(new Color(203,208,204));
+				}
+			}
+			
+			if(e.getSource() == playingArray[8]) {
+				String label = playingArray[8].getLabel(); 
+				if(playingArray[4].getLabel().equals("")) { 
+					playingArray[4].setLabel(label);
+					playingArray[4].setBackground(new Color(228,160,016));
+					playingArray[8].setLabel(""); 
+					playingArray[8].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[9].getLabel().equals("")) { 
+					playingArray[9].setLabel(label);
+					playingArray[9].setBackground(new Color(228,160,016));
+					playingArray[8].setLabel("");
+					playingArray[8].setBackground(new Color(203,208,204));
+				}
+				if(playingArray[12].getLabel().equals("")) { 
+					playingArray[12].setLabel(label);
+					playingArray[12].setBackground(new Color(228,160,016));
+					playingArray[8].setLabel(""); 
+					playingArray[8].setBackground(new Color(203,208,204));
+				}
+			}
+			
+			if(e.getSource() == playingArray[9]) {
+				String label = playingArray[9].getLabel(); 
+				if(playingArray[5].getLabel().equals("")) { 
+					playingArray[5].setLabel(label);
+					playingArray[5].setBackground(new Color(228,160,016));
+					playingArray[9].setLabel(""); 
+					playingArray[9].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[8].getLabel().equals("")) { 
+					playingArray[8].setLabel(label);
+					playingArray[8].setBackground(new Color(228,160,016));
+					playingArray[9].setLabel("");
+					playingArray[9].setBackground(new Color(203,208,204));
+				}
+				if(playingArray[10].getLabel().equals("")) { 
+					playingArray[10].setLabel(label);
+					playingArray[10].setBackground(new Color(228,160,016));
+					playingArray[9].setLabel(""); 
+					playingArray[9].setBackground(new Color(203,208,204));
+				}
+				if(playingArray[13].getLabel().equals("")) { 
+					playingArray[13].setLabel(label);
+					playingArray[13].setBackground(new Color(228,160,016));
+					playingArray[9].setLabel(""); 
+					playingArray[9].setBackground(new Color(203,208,204));
+				}
+			}
+			
+			if(e.getSource() == playingArray[10]) {
+				String label = playingArray[10].getLabel(); 
+				if(playingArray[6].getLabel().equals("")) { 
+					playingArray[6].setLabel(label);
+					playingArray[6].setBackground(new Color(228,160,016));
+					playingArray[10].setLabel(""); 
+					playingArray[10].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[9].getLabel().equals("")) { 
+					playingArray[9].setLabel(label);
+					playingArray[9].setBackground(new Color(228,160,016));
+					playingArray[10].setLabel("");
+					playingArray[10].setBackground(new Color(203,208,204));
+				}
+				if(playingArray[11].getLabel().equals("")) { 
+					playingArray[11].setLabel(label);
+					playingArray[11].setBackground(new Color(228,160,016));
+					playingArray[10].setLabel(""); 
+					playingArray[10].setBackground(new Color(203,208,204));
+				}
+				if(playingArray[14].getLabel().equals("")) { 
+					playingArray[14].setLabel(label);
+					playingArray[14].setBackground(new Color(228,160,016));
+					playingArray[10].setLabel(""); 
+					playingArray[10].setBackground(new Color(203,208,204));
+				}
+			}
+			
+			if(e.getSource() == playingArray[11]) {
+				String label = playingArray[11].getLabel(); 
+				if(playingArray[7].getLabel().equals("")) { 
+					playingArray[7].setLabel(label);
+					playingArray[7].setBackground(new Color(228,160,016));
+					playingArray[11].setLabel("");
+					playingArray[11].setBackground(new Color(203,208,204));
+				}
+				if(playingArray[10].getLabel().equals("")) { 
+					playingArray[10].setLabel(label);
+					playingArray[10].setBackground(new Color(228,160,016));
+					playingArray[11].setLabel(""); 
+					playingArray[11].setBackground(new Color(203,208,204));
+				}
+				if(playingArray[15].getLabel().equals("")) { 
+					playingArray[15].setLabel(label);
+					playingArray[15].setBackground(new Color(228,160,016));
+					playingArray[11].setLabel(""); 
+					playingArray[11].setBackground(new Color(203,208,204));
+				}
+			}
+			
+			if(e.getSource() == playingArray[12]) {
+				String label = playingArray[12].getLabel(); 
+				if(playingArray[8].getLabel().equals("")) { 
+					playingArray[8].setLabel(label);
+					playingArray[8].setBackground(new Color(228,160,016));
+					playingArray[12].setLabel(""); 
+					playingArray[12].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[13].getLabel().equals("")) { 
+					playingArray[13].setLabel(label);
+					playingArray[13].setBackground(new Color(228,160,016));
+					playingArray[12].setLabel("");
+					playingArray[12].setBackground(new Color(203,208,204));
+				}
+			}
+			
+			if(e.getSource() == playingArray[13]) {
+				String label = playingArray[13].getLabel(); 
+				if(playingArray[9].getLabel().equals("")) { 
+					playingArray[9].setLabel(label);
+					playingArray[9].setBackground(new Color(228,160,016));
+					playingArray[13].setLabel(""); 
+					playingArray[13].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[12].getLabel().equals("")) { 
+					playingArray[12].setLabel(label);
+					playingArray[12].setBackground(new Color(228,160,016));
+					playingArray[13].setLabel("");
+					playingArray[13].setBackground(new Color(203,208,204));
+				}
+				if(playingArray[14].getLabel().equals("")) { 
+					playingArray[14].setLabel(label);
+					playingArray[14].setBackground(new Color(228,160,016));
+					playingArray[13].setLabel(""); 
+					playingArray[13].setBackground(new Color(203,208,204));
+				}
+			}
+			
+			if(e.getSource() == playingArray[14]) {
+				String label = playingArray[14].getLabel(); 
+				if(playingArray[10].getLabel().equals("")) { 
+					playingArray[10].setLabel(label);
+					playingArray[10].setBackground(new Color(228,160,016));
+					playingArray[14].setLabel(""); 
+					playingArray[14].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[13].getLabel().equals("")) { 
+					playingArray[13].setLabel(label);
+					playingArray[13].setBackground(new Color(228,160,016));
+					playingArray[14].setLabel("");
+					playingArray[14].setBackground(new Color(203,208,204));
+				}
+				if(playingArray[15].getLabel().equals("")) { 
+					playingArray[15].setLabel(label);
+					playingArray[15].setBackground(new Color(228,160,016));
+					playingArray[14].setLabel(""); 
+					playingArray[14].setBackground(new Color(203,208,204));
+				}
+			}
+			
+			if(e.getSource() == playingArray[15]) {
+				String label = playingArray[15].getLabel(); 
+				if(playingArray[11].getLabel().equals("")) { 
+					playingArray[11].setLabel(label);
+					playingArray[11].setBackground(new Color(228,160,016));
+					playingArray[15].setLabel(""); 
+					playingArray[15].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[14].getLabel().equals("")) { 
+					playingArray[14].setLabel(label);
+					playingArray[14].setBackground(new Color(228,160,016));
+					playingArray[15].setLabel("");
+					playingArray[15].setBackground(new Color(203,208,204));
+				}
+			}
 		}
 		
 		if(dimSize == 5 && timer.isRunning()) {
-			
+			if(e.getSource() == playingArray[0]) {
+				String label = playingArray[0].getLabel(); 
+				if(playingArray[1].getLabel().equals("")) { 
+					playingArray[1].setLabel(label);
+					playingArray[1].setBackground(new Color(228,160,016));
+					playingArray[0].setLabel(""); 
+					playingArray[0].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[5].getLabel().equals("")) { 
+					playingArray[5].setLabel(label);
+					playingArray[5].setBackground(new Color(228,160,016));
+					playingArray[0].setLabel("");
+					playingArray[0].setBackground(new Color(203,208,204));
+				} 
+			}
+			if(e.getSource() == playingArray[1]) {
+				String label = playingArray[1].getLabel(); 
+				if(playingArray[0].getLabel().equals("")) { 
+					playingArray[0].setLabel(label);
+					playingArray[0].setBackground(new Color(228,160,016));
+					playingArray[1].setLabel(""); 
+					playingArray[1].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[2].getLabel().equals("")) { 
+					playingArray[2].setLabel(label);
+					playingArray[2].setBackground(new Color(228,160,016));
+					playingArray[1].setLabel("");
+					playingArray[1].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[6].getLabel().equals("")) { 
+					playingArray[6].setLabel(label);
+					playingArray[6].setBackground(new Color(228,160,016));
+					playingArray[1].setLabel("");
+					playingArray[1].setBackground(new Color(203,208,204));
+				} 
+			}
+			if(e.getSource() == playingArray[2]) {
+				String label = playingArray[2].getLabel(); 
+				if(playingArray[1].getLabel().equals("")) { 
+					playingArray[1].setLabel(label);
+					playingArray[1].setBackground(new Color(228,160,016));
+					playingArray[2].setLabel(""); 
+					playingArray[2].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[3].getLabel().equals("")) { 
+					playingArray[3].setLabel(label);
+					playingArray[3].setBackground(new Color(228,160,016));
+					playingArray[2].setLabel("");
+					playingArray[2].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[7].getLabel().equals("")) { 
+					playingArray[7].setLabel(label);
+					playingArray[7].setBackground(new Color(228,160,016));
+					playingArray[2].setLabel("");
+					playingArray[2].setBackground(new Color(203,208,204));
+				} 
+			}
+			if(e.getSource() == playingArray[3]) {
+				String label = playingArray[3].getLabel(); 
+				if(playingArray[2].getLabel().equals("")) { 
+					playingArray[2].setLabel(label);
+					playingArray[2].setBackground(new Color(228,160,016));
+					playingArray[3].setLabel(""); 
+					playingArray[3].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[4].getLabel().equals("")) { 
+					playingArray[4].setLabel(label);
+					playingArray[4].setBackground(new Color(228,160,016));
+					playingArray[3].setLabel("");
+					playingArray[3].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[8].getLabel().equals("")) { 
+					playingArray[8].setLabel(label);
+					playingArray[8].setBackground(new Color(228,160,016));
+					playingArray[3].setLabel("");
+					playingArray[3].setBackground(new Color(203,208,204));
+				}
+			}
+			if(e.getSource() == playingArray[4]) {
+				String label = playingArray[4].getLabel(); 
+				if(playingArray[3].getLabel().equals("")) { 
+					playingArray[3].setLabel(label);
+					playingArray[3].setBackground(new Color(228,160,016));
+					playingArray[4].setLabel("");
+					playingArray[4].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[9].getLabel().equals("")) { 
+					playingArray[9].setLabel(label);
+					playingArray[9].setBackground(new Color(228,160,016));
+					playingArray[4].setLabel("");
+					playingArray[4].setBackground(new Color(203,208,204));
+				}
+			}
+			if(e.getSource() == playingArray[5]) {
+				String label = playingArray[5].getLabel(); 
+				if(playingArray[0].getLabel().equals("")) { 
+					playingArray[0].setLabel(label);
+					playingArray[0].setBackground(new Color(228,160,016));
+					playingArray[5].setLabel(""); 
+					playingArray[5].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[6].getLabel().equals("")) { 
+					playingArray[6].setLabel(label);
+					playingArray[6].setBackground(new Color(228,160,016));
+					playingArray[5].setLabel("");
+					playingArray[5].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[10].getLabel().equals("")) { 
+					playingArray[10].setLabel(label);
+					playingArray[10].setBackground(new Color(228,160,016));
+					playingArray[5].setLabel("");
+					playingArray[5].setBackground(new Color(203,208,204));
+				}
+			}
+			if(e.getSource() == playingArray[6]) {
+				String label = playingArray[6].getLabel(); 
+				if(playingArray[1].getLabel().equals("")) { 
+					playingArray[1].setLabel(label);
+					playingArray[1].setBackground(new Color(228,160,016));
+					playingArray[6].setLabel(""); 
+					playingArray[6].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[5].getLabel().equals("")) { 
+					playingArray[5].setLabel(label);
+					playingArray[5].setBackground(new Color(228,160,016));
+					playingArray[6].setLabel("");
+					playingArray[6].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[7].getLabel().equals("")) { 
+					playingArray[7].setLabel(label);
+					playingArray[7].setBackground(new Color(228,160,016));
+					playingArray[6].setLabel("");
+					playingArray[6].setBackground(new Color(203,208,204));
+				}
+				if(playingArray[11].getLabel().equals("")) { 
+					playingArray[11].setLabel(label);
+					playingArray[11].setBackground(new Color(228,160,016));
+					playingArray[6].setLabel("");
+					playingArray[6].setBackground(new Color(203,208,204));
+				}
+			}
+			if(e.getSource() == playingArray[7]) {
+				String label = playingArray[7].getLabel(); 
+				if(playingArray[2].getLabel().equals("")) { 
+					playingArray[2].setLabel(label);
+					playingArray[2].setBackground(new Color(228,160,016));
+					playingArray[7].setLabel(""); 
+					playingArray[7].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[6].getLabel().equals("")) { 
+					playingArray[6].setLabel(label);
+					playingArray[6].setBackground(new Color(228,160,016));
+					playingArray[7].setLabel("");
+					playingArray[7].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[8].getLabel().equals("")) { 
+					playingArray[8].setLabel(label);
+					playingArray[8].setBackground(new Color(228,160,016));
+					playingArray[7].setLabel("");
+					playingArray[7].setBackground(new Color(203,208,204));
+				}
+				if(playingArray[12].getLabel().equals("")) { 
+					playingArray[12].setLabel(label);
+					playingArray[12].setBackground(new Color(228,160,016));
+					playingArray[7].setLabel("");
+					playingArray[7].setBackground(new Color(203,208,204));
+				}
+			}
+			if(e.getSource() == playingArray[8]) {
+				String label = playingArray[8].getLabel(); 
+				if(playingArray[3].getLabel().equals("")) { 
+					playingArray[3].setLabel(label);
+					playingArray[3].setBackground(new Color(228,160,016));
+					playingArray[8].setLabel(""); 
+					playingArray[8].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[7].getLabel().equals("")) { 
+					playingArray[7].setLabel(label);
+					playingArray[7].setBackground(new Color(228,160,016));
+					playingArray[8].setLabel("");
+					playingArray[8].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[9].getLabel().equals("")) { 
+					playingArray[9].setLabel(label);
+					playingArray[9].setBackground(new Color(228,160,016));
+					playingArray[8].setLabel("");
+					playingArray[8].setBackground(new Color(203,208,204));
+				}
+				if(playingArray[13].getLabel().equals("")) { 
+					playingArray[13].setLabel(label);
+					playingArray[13].setBackground(new Color(228,160,016));
+					playingArray[8].setLabel("");
+					playingArray[8].setBackground(new Color(203,208,204));
+				}
+			}
+			if(e.getSource() == playingArray[9]) {
+				String label = playingArray[9].getLabel(); 
+				if(playingArray[4].getLabel().equals("")) { 
+					playingArray[4].setLabel(label);
+					playingArray[4].setBackground(new Color(228,160,016));
+					playingArray[9].setLabel(""); 
+					playingArray[9].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[8].getLabel().equals("")) { 
+					playingArray[8].setLabel(label);
+					playingArray[8].setBackground(new Color(228,160,016));
+					playingArray[9].setLabel("");
+					playingArray[9].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[14].getLabel().equals("")) { 
+					playingArray[14].setLabel(label);
+					playingArray[14].setBackground(new Color(228,160,016));
+					playingArray[9].setLabel("");
+					playingArray[9].setBackground(new Color(203,208,204));
+				}
+			}
+			if(e.getSource() == playingArray[10]) {
+				String label = playingArray[10].getLabel(); 
+				if(playingArray[5].getLabel().equals("")) { 
+					playingArray[5].setLabel(label);
+					playingArray[5].setBackground(new Color(228,160,016));
+					playingArray[10].setLabel(""); 
+					playingArray[10].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[11].getLabel().equals("")) { 
+					playingArray[11].setLabel(label);
+					playingArray[11].setBackground(new Color(228,160,016));
+					playingArray[10].setLabel("");
+					playingArray[10].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[15].getLabel().equals("")) { 
+					playingArray[15].setLabel(label);
+					playingArray[15].setBackground(new Color(228,160,016));
+					playingArray[10].setLabel("");
+					playingArray[10].setBackground(new Color(203,208,204));
+				}
+			}
+			if(e.getSource() == playingArray[11]) {
+				String label = playingArray[11].getLabel(); 
+				if(playingArray[6].getLabel().equals("")) { 
+					playingArray[6].setLabel(label);
+					playingArray[6].setBackground(new Color(228,160,016));
+					playingArray[11].setLabel(""); 
+					playingArray[11].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[10].getLabel().equals("")) { 
+					playingArray[10].setLabel(label);
+					playingArray[10].setBackground(new Color(228,160,016));
+					playingArray[11].setLabel("");
+					playingArray[11].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[12].getLabel().equals("")) { 
+					playingArray[12].setLabel(label);
+					playingArray[12].setBackground(new Color(228,160,016));
+					playingArray[11].setLabel("");
+					playingArray[11].setBackground(new Color(203,208,204));
+				}
+				if(playingArray[16].getLabel().equals("")) { 
+					playingArray[16].setLabel(label);
+					playingArray[16].setBackground(new Color(228,160,016));
+					playingArray[11].setLabel("");
+					playingArray[11].setBackground(new Color(203,208,204));
+				}
+			}
+			if(e.getSource() == playingArray[12]) {
+				String label = playingArray[12].getLabel(); 
+				if(playingArray[7].getLabel().equals("")) { 
+					playingArray[7].setLabel(label);
+					playingArray[7].setBackground(new Color(228,160,016));
+					playingArray[12].setLabel(""); 
+					playingArray[12].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[11].getLabel().equals("")) { 
+					playingArray[11].setLabel(label);
+					playingArray[11].setBackground(new Color(228,160,016));
+					playingArray[12].setLabel("");
+					playingArray[12].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[13].getLabel().equals("")) { 
+					playingArray[13].setLabel(label);
+					playingArray[13].setBackground(new Color(228,160,016));
+					playingArray[12].setLabel("");
+					playingArray[12].setBackground(new Color(203,208,204));
+				}
+				if(playingArray[17].getLabel().equals("")) { 
+					playingArray[17].setLabel(label);
+					playingArray[17].setBackground(new Color(228,160,016));
+					playingArray[12].setLabel("");
+					playingArray[12].setBackground(new Color(203,208,204));
+				}
+			}
+			if(e.getSource() == playingArray[13]) {
+				String label = playingArray[13].getLabel(); 
+				if(playingArray[8].getLabel().equals("")) { 
+					playingArray[8].setLabel(label);
+					playingArray[8].setBackground(new Color(228,160,016));
+					playingArray[13].setLabel(""); 
+					playingArray[13].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[12].getLabel().equals("")) { 
+					playingArray[12].setLabel(label);
+					playingArray[12].setBackground(new Color(228,160,016));
+					playingArray[13].setLabel("");
+					playingArray[13].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[14].getLabel().equals("")) { 
+					playingArray[14].setLabel(label);
+					playingArray[14].setBackground(new Color(228,160,016));
+					playingArray[13].setLabel("");
+					playingArray[13].setBackground(new Color(203,208,204));
+				}
+				if(playingArray[18].getLabel().equals("")) { 
+					playingArray[18].setLabel(label);
+					playingArray[18].setBackground(new Color(228,160,016));
+					playingArray[13].setLabel("");
+					playingArray[13].setBackground(new Color(203,208,204));
+				}
+			}
+			if(e.getSource() == playingArray[14]) {
+				String label = playingArray[14].getLabel(); 
+				if(playingArray[9].getLabel().equals("")) { 
+					playingArray[9].setLabel(label);
+					playingArray[9].setBackground(new Color(228,160,016));
+					playingArray[14].setLabel(""); 
+					playingArray[14].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[13].getLabel().equals("")) { 
+					playingArray[13].setLabel(label);
+					playingArray[13].setBackground(new Color(228,160,016));
+					playingArray[14].setLabel("");
+					playingArray[14].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[19].getLabel().equals("")) { 
+					playingArray[19].setLabel(label);
+					playingArray[19].setBackground(new Color(228,160,016));
+					playingArray[14].setLabel("");
+					playingArray[14].setBackground(new Color(203,208,204));
+				}
+			}
+			if(e.getSource() == playingArray[15]) {
+				String label = playingArray[15].getLabel(); 
+				if(playingArray[10].getLabel().equals("")) { 
+					playingArray[10].setLabel(label);
+					playingArray[10].setBackground(new Color(228,160,016));
+					playingArray[15].setLabel(""); 
+					playingArray[15].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[16].getLabel().equals("")) { 
+					playingArray[16].setLabel(label);
+					playingArray[16].setBackground(new Color(228,160,016));
+					playingArray[15].setLabel("");
+					playingArray[15].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[20].getLabel().equals("")) { 
+					playingArray[20].setLabel(label);
+					playingArray[20].setBackground(new Color(228,160,016));
+					playingArray[15].setLabel("");
+					playingArray[15].setBackground(new Color(203,208,204));
+				}
+			}
+			if(e.getSource() == playingArray[16]) {
+				String label = playingArray[16].getLabel(); 
+				if(playingArray[11].getLabel().equals("")) { 
+					playingArray[11].setLabel(label);
+					playingArray[11].setBackground(new Color(228,160,016));
+					playingArray[16].setLabel(""); 
+					playingArray[16].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[15].getLabel().equals("")) { 
+					playingArray[15].setLabel(label);
+					playingArray[15].setBackground(new Color(228,160,016));
+					playingArray[16].setLabel("");
+					playingArray[16].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[17].getLabel().equals("")) { 
+					playingArray[17].setLabel(label);
+					playingArray[17].setBackground(new Color(228,160,016));
+					playingArray[16].setLabel("");
+					playingArray[16].setBackground(new Color(203,208,204));
+				}
+				if(playingArray[21].getLabel().equals("")) { 
+					playingArray[21].setLabel(label);
+					playingArray[21].setBackground(new Color(228,160,016));
+					playingArray[16].setLabel("");
+					playingArray[16].setBackground(new Color(203,208,204));
+				}
+			}
+			if(e.getSource() == playingArray[17]) {
+				String label = playingArray[17].getLabel(); 
+				if(playingArray[12].getLabel().equals("")) { 
+					playingArray[12].setLabel(label);
+					playingArray[12].setBackground(new Color(228,160,016));
+					playingArray[17].setLabel(""); 
+					playingArray[17].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[16].getLabel().equals("")) { 
+					playingArray[16].setLabel(label);
+					playingArray[16].setBackground(new Color(228,160,016));
+					playingArray[17].setLabel("");
+					playingArray[17].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[18].getLabel().equals("")) { 
+					playingArray[18].setLabel(label);
+					playingArray[18].setBackground(new Color(228,160,016));
+					playingArray[17].setLabel("");
+					playingArray[17].setBackground(new Color(203,208,204));
+				}
+				if(playingArray[22].getLabel().equals("")) { 
+					playingArray[22].setLabel(label);
+					playingArray[22].setBackground(new Color(228,160,016));
+					playingArray[17].setLabel("");
+					playingArray[17].setBackground(new Color(203,208,204));
+				}
+			}
+			if(e.getSource() == playingArray[18]) {
+				String label = playingArray[18].getLabel(); 
+				if(playingArray[13].getLabel().equals("")) { 
+					playingArray[13].setLabel(label);
+					playingArray[13].setBackground(new Color(228,160,016));
+					playingArray[18].setLabel(""); 
+					playingArray[18].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[17].getLabel().equals("")) { 
+					playingArray[17].setLabel(label);
+					playingArray[17].setBackground(new Color(228,160,016));
+					playingArray[18].setLabel("");
+					playingArray[18].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[19].getLabel().equals("")) { 
+					playingArray[19].setLabel(label);
+					playingArray[19].setBackground(new Color(228,160,016));
+					playingArray[18].setLabel("");
+					playingArray[18].setBackground(new Color(203,208,204));
+				}
+				if(playingArray[23].getLabel().equals("")) { 
+					playingArray[23].setLabel(label);
+					playingArray[23].setBackground(new Color(228,160,016));
+					playingArray[18].setLabel("");
+					playingArray[18].setBackground(new Color(203,208,204));
+				}
+			}
+			if(e.getSource() == playingArray[19]) {
+				String label = playingArray[19].getLabel(); 
+				if(playingArray[14].getLabel().equals("")) { 
+					playingArray[14].setLabel(label);
+					playingArray[14].setBackground(new Color(228,160,016));
+					playingArray[19].setLabel(""); 
+					playingArray[19].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[18].getLabel().equals("")) { 
+					playingArray[18].setLabel(label);
+					playingArray[18].setBackground(new Color(228,160,016));
+					playingArray[19].setLabel("");
+					playingArray[19].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[24].getLabel().equals("")) { 
+					playingArray[24].setLabel(label);
+					playingArray[24].setBackground(new Color(228,160,016));
+					playingArray[19].setLabel("");
+					playingArray[19].setBackground(new Color(203,208,204));
+				}
+			}
+			if(e.getSource() == playingArray[20]) {
+				String label = playingArray[20].getLabel(); 
+				if(playingArray[15].getLabel().equals("")) { 
+					playingArray[15].setLabel(label);
+					playingArray[15].setBackground(new Color(228,160,016));
+					playingArray[20].setLabel(""); 
+					playingArray[20].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[21].getLabel().equals("")) { 
+					playingArray[21].setLabel(label);
+					playingArray[21].setBackground(new Color(228,160,016));
+					playingArray[20].setLabel("");
+					playingArray[20].setBackground(new Color(203,208,204));
+				} 
+			}
+			if(e.getSource() == playingArray[21]) {
+				String label = playingArray[21].getLabel(); 
+				if(playingArray[16].getLabel().equals("")) { 
+					playingArray[16].setLabel(label);
+					playingArray[16].setBackground(new Color(228,160,016));
+					playingArray[21].setLabel(""); 
+					playingArray[21].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[20].getLabel().equals("")) { 
+					playingArray[20].setLabel(label);
+					playingArray[20].setBackground(new Color(228,160,016));
+					playingArray[21].setLabel("");
+					playingArray[21].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[22].getLabel().equals("")) { 
+					playingArray[22].setLabel(label);
+					playingArray[22].setBackground(new Color(228,160,016));
+					playingArray[21].setLabel("");
+					playingArray[21].setBackground(new Color(203,208,204));
+				}
+			}
+			if(e.getSource() == playingArray[22]) {
+				String label = playingArray[22].getLabel(); 
+				if(playingArray[17].getLabel().equals("")) { 
+					playingArray[17].setLabel(label);
+					playingArray[17].setBackground(new Color(228,160,016));
+					playingArray[22].setLabel(""); 
+					playingArray[22].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[21].getLabel().equals("")) { 
+					playingArray[21].setLabel(label);
+					playingArray[21].setBackground(new Color(228,160,016));
+					playingArray[22].setLabel("");
+					playingArray[22].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[23].getLabel().equals("")) { 
+					playingArray[23].setLabel(label);
+					playingArray[23].setBackground(new Color(228,160,016));
+					playingArray[22].setLabel("");
+					playingArray[22].setBackground(new Color(203,208,204));
+				}
+			}
+			if(e.getSource() == playingArray[23]) {
+				String label = playingArray[23].getLabel(); 
+				if(playingArray[18].getLabel().equals("")) { 
+					playingArray[18].setLabel(label);
+					playingArray[18].setBackground(new Color(228,160,016));
+					playingArray[23].setLabel(""); 
+					playingArray[23].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[22].getLabel().equals("")) { 
+					playingArray[22].setLabel(label);
+					playingArray[22].setBackground(new Color(228,160,016));
+					playingArray[23].setLabel("");
+					playingArray[23].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[24].getLabel().equals("")) { 
+					playingArray[24].setLabel(label);
+					playingArray[24].setBackground(new Color(228,160,016));
+					playingArray[23].setLabel("");
+					playingArray[23].setBackground(new Color(203,208,204));
+				}
+			}
+			if(e.getSource() == playingArray[24]) {
+				String label = playingArray[24].getLabel(); 
+				if(playingArray[19].getLabel().equals("")) { 
+					playingArray[19].setLabel(label);
+					playingArray[19].setBackground(new Color(228,160,016));
+					playingArray[24].setLabel(""); 
+					playingArray[24].setBackground(new Color(203,208,204));
+				} 
+				if(playingArray[23].getLabel().equals("")) { 
+					playingArray[23].setLabel(label);
+					playingArray[23].setBackground(new Color(228,160,016));
+					playingArray[24].setLabel("");
+					playingArray[24].setBackground(new Color(203,208,204));
+				} 
+			}
 		}
 	}
 }
