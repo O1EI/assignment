@@ -447,7 +447,7 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 				inputText.setEnabled(true);
 				loadButton.setEnabled(true);
 				randButton.setEnabled(true);
-				startButton.setEnabled(true);
+				startButton.setEnabled(false);
 				timer.stop();
 				seconds = 0;
 				minutes = 0;
@@ -502,7 +502,7 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 				//System.out.println("Game Start");
 				hideButton.setEnabled(false);
 				typeOptionList.setEnabled(false);
-				gameOptionsList.setEnabled(true);
+				gameOptionsList.setEnabled(false);
 				inputText.setEnabled(false);
 				loadButton.setEnabled(false);
 				randButton.setEnabled(false);
@@ -660,7 +660,7 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		/*button logic*/
-		if(dimSize == 2) {
+		if(dimSize == 2 && timer.isRunning()) {
 			if(e.getSource() == playingArray[0]) { 
 				String label = playingArray[0].getLabel(); 
 				if(playingArray[1].getLabel().equals("")) { 
@@ -732,7 +732,7 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 //			}
 		}
 		
-		if(dimSize == 3) {
+		if(dimSize == 3 && timer.isRunning()) {
 			if(e.getSource() == playingArray[0]) { 
 				String label = playingArray[0].getLabel(); 
 				if(playingArray[1].getLabel().equals("")) { 
@@ -897,7 +897,7 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 				} 
 			}
 			
-			if(e.getSource() == playingArray[8]){
+			if(e.getSource() == playingArray[8]) {
 				String label = playingArray[8].getLabel(); 
 				if(playingArray[5].getLabel().equals("")) { 
 					playingArray[5].setLabel(label);
@@ -912,6 +912,14 @@ public class NumPuzzle extends WindowAdapter implements ActionListener {
 					playingArray[8].setBackground(new Color(203,208,204));
 				} 
 			}
+		}
+		
+		if(dimSize == 4 && timer.isRunning()) {
+			
+		}
+		
+		if(dimSize == 5 && timer.isRunning()) {
+			
 		}
 	}
 }
