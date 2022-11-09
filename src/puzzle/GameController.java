@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowListener;
 import java.util.Random;
+import java.util.Timer;
 
 import javax.swing.JButton;
 
@@ -18,7 +19,7 @@ public class GameController {
 	ActionListener radioPlayActionListener;
 	ActionListener inputActionListener;
 	Random rand = new Random();//to shuffle the board
-	
+	protected Timer timer;
 	
 	/**
 	 * Default constructor
@@ -125,6 +126,10 @@ public class GameController {
 				gameView.gameOptionsList.setEnabled(true);
 				gameView.startButton.setText("Start");
 				gameView.loadButton.setEnabled(true);
+				timer.wait();
+				gameView.seconds = 0;
+				gameView.minutes = 0;
+				gameView.timeDisplay.setText("0:00");
 			}
 		},
 		
