@@ -1,6 +1,7 @@
 package puzzle;
 
 import java.awt.BorderLayout;
+import java.awt.Checkbox;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -28,12 +29,9 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.Timer;
 
 public class GameView {
-	
-	
-	
-	
 	
 	private JFrame frame;//main frame
 
@@ -99,10 +97,10 @@ public class GameView {
 	protected String textValue;
 	
 	//Time variables
-	private Timer timer;
-	private int seconds = 0, minutes = 0;
-	private String dSeconds, dMinutes;
-	DecimalFormat dFormat = new DecimalFormat("00");
+	protected Timer timer;
+	protected int seconds = 0, minutes = 0;
+	protected String dSeconds, dMinutes;
+	protected DecimalFormat dFormat = new DecimalFormat("00");
 	
 	/*Radio button*/
 	private JRadioButton r1;
@@ -110,7 +108,7 @@ public class GameView {
 	
 	
 	/*text field for time and point*/
-	private JTextField timeDisplay;
+	protected JTextField timeDisplay;
 	private JTextField pointDisplay;
 	
 	
@@ -223,8 +221,6 @@ public class GameView {
 		btnArray[23] = btn24;
 		btnArray[24] = btn25;
 		
-<<<<<<< HEAD:src/puzzle/GameView.java
-		
 		menuBar = new JMenuBar();
 		
 		gameMenu = new JMenu("Game");
@@ -251,34 +247,6 @@ public class GameView {
 		itemAbout.setMnemonic(KeyEvent.VK_A);
 		helpMenu.add(itemColors);
 		helpMenu.add(itemAbout);
-		
-=======
-		btn1.addActionListener(this);
-	    btn2.addActionListener(this);
-	    btn3.addActionListener(this);
-	    btn4.addActionListener(this);
-	    btn5.addActionListener(this);
-	    btn6.addActionListener(this);
-	    btn7.addActionListener(this);
-	    btn8.addActionListener(this);
-	    btn9.addActionListener(this);
-	    btn10.addActionListener(this);
-	    btn11.addActionListener(this);
-	    btn12.addActionListener(this);
-	    btn13.addActionListener(this);
-	    btn14.addActionListener(this);
-	    btn15.addActionListener(this);
-	    btn16.addActionListener(this);
-	    btn17.addActionListener(this);
-	    btn18.addActionListener(this);
-	    btn19.addActionListener(this);
-	    btn20.addActionListener(this);
-	    btn21.addActionListener(this);
-	    btn22.addActionListener(this);
-	    btn23.addActionListener(this);
-	    btn24.addActionListener(this);
-	    btn25.addActionListener(this);
->>>>>>> 2a5acfbd93a90b5b261db1c41214b7550a1863b8:src/puzzle/NumPuzzle.java
 		
 		for(int i = 0; i<25;i++) {
 			btnArray[i].setBackground(new Color(228,160,016));
@@ -309,21 +277,11 @@ public class GameView {
 		gameOptionsList.setFont(modeFont);
 		gameOptionsList.setRenderer(centerRenderer);
 		
-<<<<<<< HEAD:src/puzzle/GameView.java
-		
-		
-=======
-		gameOptionsList.addActionListener(cbActionListener);
->>>>>>> 2a5acfbd93a90b5b261db1c41214b7550a1863b8:src/puzzle/NumPuzzle.java
-		
-		
 		JLabel dimTitle = new JLabel("Dim : ");
 		dimTitle.setFont(modeFont);
 		
 		rightPane.add(dimTitle);
 		rightPane.add(gameOptionsList);	
-		
-		
 		
 		dimTitle.setBounds(60,115,180,40);
 		
@@ -360,29 +318,23 @@ public class GameView {
 		loadButton.setBackground(new Color(228,160,016));
 		rightPane.add(loadButton);
 		
-		
-<<<<<<< HEAD:src/puzzle/GameView.java
-		
-=======
-		ActionListener shuffleActionListener = new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				if(playingArray != null) {
-					for(int i = 0; i< playingArray.length; i++) {
-						int randIndexNum = rand.nextInt(playingArray.length);
-						JButton temp = playingArray[randIndexNum];
-						playingArray[randIndexNum]=playingArray[i];
-						playingArray[i]=temp;
-					}
-					for(int i = 0 ; i<playingArray.length; i++) {
-						playingPane.add(playingArray[i]);
-					}
-					playingPane.revalidate();
-				}
-			}		
-		};
->>>>>>> 2a5acfbd93a90b5b261db1c41214b7550a1863b8:src/puzzle/NumPuzzle.java
-	
+//		ActionListener shuffleActionListener = new ActionListener() {
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				if(playingArray != null) {
+//					for(int i = 0; i< playingArray.length; i++) {
+//						int randIndexNum = rand.nextInt(playingArray.length);
+//						JButton temp = playingArray[randIndexNum];
+//						playingArray[randIndexNum]=playingArray[i];
+//						playingArray[i]=temp;
+//					}
+//					for(int i = 0 ; i<playingArray.length; i++) {
+//						playingPane.add(playingArray[i]);
+//					}
+//					playingPane.revalidate();
+//				}
+//			}		
+//		};
 		
 		randButton.setBounds(245,230,80,50);
 		randButton.setBackground(new Color(228,160,016));		
@@ -459,91 +411,77 @@ public class GameView {
 		logArea.setFont(new Font("Sansserif", Font.BOLD, 15));
 		rightPane.add(logArea);
 		
-<<<<<<< HEAD:src/puzzle/GameView.java
+//		ActionListener radioDesignActionListener = new ActionListener() {
+//			@Override
+//			public void actionPerformed(ActionEvent e) {				
+//				//System.out.println("Design");
+//				hideButton.setEnabled(true);
+//				typeOptionList.setEnabled(true);
+//				gameOptionsList.setEnabled(true);
+//				inputText.setEnabled(true);
+//				loadButton.setEnabled(true);
+//				randButton.setEnabled(true);
+//				startButton.setEnabled(false);
+//				timer.stop();
+//				seconds = 0;
+//				minutes = 0;
+//				timeDisplay.setText("0:00");
+//			}
+//		};
+
+//		ActionListener radioPlayActionListener = new ActionListener() {
+//			@Override
+//			public void actionPerformed(ActionEvent e) {				
+//				//System.out.println("Play");
+//				hideButton.setEnabled(false);
+//				typeOptionList.setEnabled(false);
+//				gameOptionsList.setEnabled(true);
+//				inputText.setEnabled(false);
+//				loadButton.setEnabled(true);
+//				randButton.setEnabled(true);
+//				startButton.setEnabled(true);
+//				timer.stop();
+//				seconds = 0;
+//				minutes = 0;
+//				timeDisplay.setText("0:00");
+//			}
+//		};	
 		
+//		timer = new Timer(1000, new ActionListener() {
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				seconds++;
+//				dSeconds = dFormat.format(seconds);
+//				dMinutes = dFormat.format(minutes);
+//				timeDisplay.setText(minutes + ":" + dSeconds);
+//				
+//				if(seconds == 60) {
+//					seconds = 0;
+//					minutes++;
+//					
+//					dSeconds = dFormat.format(seconds);
+//					dMinutes = dFormat.format(minutes);
+//					timeDisplay.setText(minutes + ":" + dSeconds);
+//				}
+//			}
+//		});
 		
-=======
-		ActionListener radioDesignActionListener = new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {				
-				//System.out.println("Design");
-				hideButton.setEnabled(true);
-				typeOptionList.setEnabled(true);
-				gameOptionsList.setEnabled(true);
-				inputText.setEnabled(true);
-				loadButton.setEnabled(true);
-				randButton.setEnabled(true);
-				startButton.setEnabled(false);
-				timer.stop();
-				seconds = 0;
-				minutes = 0;
-				timeDisplay.setText("0:00");
-			}
-		};
->>>>>>> 2a5acfbd93a90b5b261db1c41214b7550a1863b8:src/puzzle/NumPuzzle.java
+//		ActionListener startActionListener = new ActionListener() {
+//			@Override
+//			public void actionPerformed(ActionEvent e) {				
+//				//System.out.println("Game Start");
+//				hideButton.setEnabled(false);
+//				typeOptionList.setEnabled(false);
+//				gameOptionsList.setEnabled(false);
+//				inputText.setEnabled(false);
+//				loadButton.setEnabled(false);
+//				randButton.setEnabled(false);
+//				startButton.setEnabled(false);
+//				timer.start();
+//			}
+//		};
 		
-		
-<<<<<<< HEAD:src/puzzle/GameView.java
-=======
-		ActionListener radioPlayActionListener = new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {				
-				//System.out.println("Play");
-				hideButton.setEnabled(false);
-				typeOptionList.setEnabled(false);
-				gameOptionsList.setEnabled(true);
-				inputText.setEnabled(false);
-				loadButton.setEnabled(true);
-				randButton.setEnabled(true);
-				startButton.setEnabled(true);
-				timer.stop();
-				seconds = 0;
-				minutes = 0;
-				timeDisplay.setText("0:00");
-			}
-		};
->>>>>>> 2a5acfbd93a90b5b261db1c41214b7550a1863b8:src/puzzle/NumPuzzle.java
-		
-		
-		
-		
-		
-		
-		timer = new Timer(1000, new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				seconds++;
-				dSeconds = dFormat.format(seconds);
-				dMinutes = dFormat.format(minutes);
-				timeDisplay.setText(minutes + ":" + dSeconds);
-				
-				if(seconds == 60) {
-					seconds = 0;
-					minutes++;
-					
-					dSeconds = dFormat.format(seconds);
-					dMinutes = dFormat.format(minutes);
-					timeDisplay.setText(minutes + ":" + dSeconds);
-				}
-			}
-		});
-		
-		ActionListener startActionListener = new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {				
-				//System.out.println("Game Start");
-				hideButton.setEnabled(false);
-				typeOptionList.setEnabled(false);
-				gameOptionsList.setEnabled(false);
-				inputText.setEnabled(false);
-				loadButton.setEnabled(false);
-				randButton.setEnabled(false);
-				startButton.setEnabled(false);
-				timer.start();
-			}
-		};
-		
-		startButton.addActionListener(startActionListener);
+//		startButton.addActionListener(startActionListener);
 		
 		
 		rightPane.add(dummyLabel);
@@ -567,13 +505,15 @@ public class GameView {
 	}
 	
 	
-	public void addListeners(ActionListener cbActionListener,
+	public void addListeners(
+			ActionListener cbActionListener,
 			ActionListener shuffleActionListener,
 			ActionListener typeActionListener,
 			ActionListener inputActionListener,
 			ActionListener radioDesignActionListener,
 			ActionListener startActionListener,
-			ActionListener radioPlayActionListener) {
+			ActionListener radioPlayActionListener, 
+			Timer timer) {
 		
 		gameOptionsList.addActionListener(cbActionListener);
 		randButton.addActionListener(shuffleActionListener);
@@ -583,7 +523,31 @@ public class GameView {
 		startButton.addActionListener(startActionListener);
 		r2.addActionListener(radioPlayActionListener);
 		
-		
+		btn1.addActionListener(this);
+	    btn2.addActionListener(this);
+	    btn3.addActionListener(this);
+	    btn4.addActionListener(this);
+	    btn5.addActionListener(this);
+	    btn6.addActionListener(this);
+	    btn7.addActionListener(this);
+	    btn8.addActionListener(this);
+	    btn9.addActionListener(this);
+	    btn10.addActionListener(this);
+	    btn11.addActionListener(this);
+	    btn12.addActionListener(this);
+	    btn13.addActionListener(this);
+	    btn14.addActionListener(this);
+	    btn15.addActionListener(this);
+	    btn16.addActionListener(this);
+	    btn17.addActionListener(this);
+	    btn18.addActionListener(this);
+	    btn19.addActionListener(this);
+	    btn20.addActionListener(this);
+	    btn21.addActionListener(this);
+	    btn22.addActionListener(this);
+	    btn23.addActionListener(this);
+	    btn24.addActionListener(this);
+	    btn25.addActionListener(this);
 	}
 	
 	/**
@@ -635,13 +599,13 @@ public class GameView {
 	}
 	
 	
-<<<<<<< HEAD:src/puzzle/GameView.java
+
 	/**
 	 * Method to put the text for puzzle
 	 * @param textValue for input from user to put text
 	 * @param dimSize for size of the dimension
 	 */
-=======
+
 //	private Timer timer = new Timer(1000, new ActionListener() {
 //		public void actionPerformed(ActionEvent e) {
 //			seconds++;
@@ -652,7 +616,7 @@ public class GameView {
 	private int score;
 	//private int seconds = 0;
 	private boolean started = false;
-	private String seconds_String = String.format("%01d", seconds);
+//	private String seconds_String = String.format("%01d", seconds);
 	private String score_String = String.format("%d", score);
 	
 	
@@ -675,7 +639,6 @@ public class GameView {
 	
 	
 	@SuppressWarnings("deprecation")
->>>>>>> 2a5acfbd93a90b5b261db1c41214b7550a1863b8:src/puzzle/NumPuzzle.java
 	public void putText(String textValue, int dimSize) {
 		String[] textArray = new String[25];
 		for(int i = 0 ; i < 25;i++) {
@@ -720,17 +683,14 @@ public class GameView {
 		playingPane.repaint();
 	}
 	
-	
-	
-<<<<<<< HEAD:src/puzzle/GameView.java
 	public String getAnswer() {
 		String answer = String.valueOf(dimSize)+ " : ";
 		for(int i = 0; i < 25 ; i++) {
 			answer = answer + String.valueOf(answerArray[i]);
 		}
 		return answer;
-=======
-	@Override
+	}
+
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		/*button logic*/
@@ -1899,8 +1859,5 @@ public class GameView {
 				} 
 			}
 		}
->>>>>>> 2a5acfbd93a90b5b261db1c41214b7550a1863b8:src/puzzle/NumPuzzle.java
 	}
-	
-
 }
