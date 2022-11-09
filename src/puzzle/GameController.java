@@ -7,8 +7,11 @@ import java.awt.event.WindowListener;
 import java.text.DecimalFormat;
 import java.util.Random;
 
-
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JWindow;
+import javax.swing.SwingConstants;
 import javax.swing.Timer;
 
 public class GameController {
@@ -59,9 +62,11 @@ public class GameController {
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						// TODO Auto-generated method stub
-						GameView tempGame = new GameView();
-						gameView.terminate();
-						gameView = tempGame;						
+						
+						GameView tempGame = new GameView();			
+					
+						gameView = tempGame;
+						
 					}
 				}, 
 				solActionListener = new ActionListener() {
@@ -75,7 +80,30 @@ public class GameController {
 					public void actionPerformed(ActionEvent e) {
 						gameView.terminate();
 					}
-				}, btnActionListener, inputActionListener);
+				},
+				colActionListener = new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						gameView.setColor();
+					}
+				},
+				abtActionListener = new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						JWindow window = new JWindow();
+						window.getContentPane().add(
+								new JLabel("", new ImageIcon("images/gameabt.png"),SwingConstants.CENTER));
+						window.setBounds(500,300,500,500);
+						window.setVisible(true);
+						try {
+							Thread.sleep(3500);
+						} catch(InterruptedException ea) {
+							ea.printStackTrace();
+						}
+						window.setVisible(false);
+						
+					}
+				});
 		
 	}
 	

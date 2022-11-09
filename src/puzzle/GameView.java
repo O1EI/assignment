@@ -3,7 +3,9 @@ package puzzle;
 import java.awt.BorderLayout;
 import java.awt.Checkbox;
 import java.awt.Color;
+import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -19,6 +21,7 @@ import javax.swing.ButtonGroup;
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JColorChooser;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -29,6 +32,8 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.JWindow;
+import javax.swing.SwingConstants;
 import javax.swing.Timer;
 
 public class GameView {
@@ -121,6 +126,18 @@ public class GameView {
 	 * Default Constructor
 	 */
 	public GameView() {
+		JWindow window = new JWindow();
+		window.getContentPane().add(
+				new JLabel("", new ImageIcon("images/game.png"),SwingConstants.CENTER));
+		window.setBounds(500,300,500,500);
+		window.setVisible(true);
+		try {
+			Thread.sleep(3500);
+		} catch(InterruptedException e) {
+			e.printStackTrace();
+		}
+		window.setVisible(false);
+		
 		setAndLaunch();
 		puzzleDimension(dimSize);
 	}
@@ -581,6 +598,12 @@ public class GameView {
 	
 	public void terminate() {
 		System.exit(0);
+	}
+	
+	public void setColor() {
+		Color initialcolor = Color.RED;
+		Color color = JColorChooser.showDialog(rightPane, "Select a Color", initialcolor);
+		rightPane.setBackground(color);
 	}
 	
 }
