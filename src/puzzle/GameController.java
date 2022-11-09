@@ -18,7 +18,7 @@ public class GameController {
 	protected String dSeconds, dMinutes;
 	protected DecimalFormat dFormat = new DecimalFormat("00");
 
-	GameView gameView = new GameView();
+	GameView gameView;
 	ActionListener cbActionListener;
 	ActionListener shuffleActionListener;
 	ActionListener typeActionListener;
@@ -40,7 +40,7 @@ public class GameController {
 	}
 	
 	public GameController(GameModel gameModel, GameView gameView) {
-		
+		this.gameView = gameView;
 		addActionListeners();
 		
 	}
