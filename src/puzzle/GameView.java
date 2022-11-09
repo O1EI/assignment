@@ -578,6 +578,9 @@ public class GameView {
 		itemColors.addActionListener(colorAction);
 		itemAbout.addActionListener(abtAction);
 	}
-		
+	
+	public void terminate() {
+		System.exit(0);
+	}
 	
 }

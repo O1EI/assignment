@@ -49,20 +49,36 @@ public class GameController {
 		this.gameView = gameView;
 		addActionListeners();
 		addBtnActionListener();
-//		addMenuActionListener();
+		addMenuActionListener();
 		
 	}
 	
-//	private void addMenuActionListener() {
-//		gameView.menuAddActionListener(
-//				newActionListener = new ActionListener() {
-//					public void actionPerforemed(ActionEvent e) {
-//						
-//					}
-//				}
-//				
-//				, cbActionListener, startActionListener, btnActionListener, inputActionListener);
-//	}
+	private void addMenuActionListener() {
+		gameView.menuAddActionListener(
+				newActionListener = new ActionListener() {					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						// TODO Auto-generated method stub
+						GameView tempGame = new GameView();
+						gameView.terminate();
+						gameView = tempGame;						
+					}
+				}, 
+				solActionListener = new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						gameView.btnArray = gameView.answerArray;
+					}
+				}, 
+				exitActionListener = new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						gameView.terminate();
+					}
+				}, btnActionListener, inputActionListener);
+		
+	}
+	
 		
 	private void addActionListeners() {
 		gameView.addListeners(
