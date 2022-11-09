@@ -569,6 +569,15 @@ public class GameView {
 			btnArray[i].addActionListener(btnacl);
 		}
 	}
+	
+	public void menuAddActionListener(ActionListener newAction, ActionListener solAction,
+			ActionListener exitAction, ActionListener colorAction,ActionListener abtAction) {
+		itemNew.addActionListener(newAction);
+		itemSolution.addActionListener(solAction);
+		itemExit.addActionListener(exitAction);
+		itemColors.addActionListener(colorAction);
+		itemAbout.addActionListener(abtAction);
+	}
 		
 	
 }

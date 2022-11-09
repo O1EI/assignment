@@ -27,6 +27,12 @@ public class GameController {
 	ActionListener radioPlayActionListener;
 	ActionListener inputActionListener;
 	ActionListener btnActionListener;
+	ActionListener newActionListener;
+	ActionListener solActionListener;
+	ActionListener exitActionListener;
+	ActionListener colActionListener;
+	ActionListener abtActionListener;
+	
 	Random rand = new Random();//to shuffle the board
 
 	
@@ -42,8 +48,21 @@ public class GameController {
 	public GameController(GameModel gameModel, GameView gameView) {
 		this.gameView = gameView;
 		addActionListeners();
+		addBtnActionListener();
+//		addMenuActionListener();
 		
 	}
+	
+//	private void addMenuActionListener() {
+//		gameView.menuAddActionListener(
+//				newActionListener = new ActionListener() {
+//					public void actionPerforemed(ActionEvent e) {
+//						
+//					}
+//				}
+//				
+//				, cbActionListener, startActionListener, btnActionListener, inputActionListener);
+//	}
 		
 	private void addActionListeners() {
 		gameView.addListeners(
