@@ -3,9 +3,11 @@ package puzzle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowListener;
+import java.text.DecimalFormat;
 import java.util.Random;
 
 import javax.swing.JButton;
+import javax.swing.Timer;
 
 public class GameController {
 
@@ -19,7 +21,6 @@ public class GameController {
 	ActionListener inputActionListener;
 	Random rand = new Random();//to shuffle the board
 	
-	
 	/**
 	 * Default constructor
 	 */
@@ -32,25 +33,21 @@ public class GameController {
 		
 	}
 		
-		
-		
 	private void addActionListeners() {
-		
 		gameView.addListeners(
-		 cbActionListener = new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				
-				gameView.gameSize = (String) gameView.gameOptionsList.getSelectedItem();
-				
-				//System.out.println(gameSize);
-				gameView.dimSize = Character.getNumericValue(gameView.gameSize.charAt(0));
-				//System.out.println(dimSize);
-				
-				gameView.puzzleDimension(gameView.dimSize);	
+				cbActionListener = new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					
+					gameView.gameSize = (String) gameView.gameOptionsList.getSelectedItem();
+						
+					//System.out.println(gameSize);
+					gameView.dimSize = Character.getNumericValue(gameView.gameSize.charAt(0));
+					//System.out.println(dimSize);
+						
+					gameView.puzzleDimension(gameView.dimSize);	
 			}
 		},
-		
 		
 		 shuffleActionListener = new ActionListener() {
 			@Override
@@ -100,21 +97,19 @@ public class GameController {
 			
 		},
 		
-		
-		
 		startActionListener = new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {				
-				//System.out.println("Game Start");
 				gameView.hideButton.setEnabled(false);
 				gameView.typeOptionList.setEnabled(false);
-				gameView.gameOptionsList.setEnabled(true);
+				gameView.gameOptionsList.setEnabled(false);
+				gameView.inputText.setEnabled(false);
 				gameView.loadButton.setEnabled(false);
-				gameView.startButton.setText("Pause");
+				gameView.randButton.setEnabled(false);
+				gameView.startButton.setEnabled(false);
+				gameView.timer.start();
 			}
 		},
-		
-		
 		
 		radioDesignActionListener = new ActionListener() {
 			@Override
@@ -123,25 +118,51 @@ public class GameController {
 				gameView.hideButton.setEnabled(true);
 				gameView.typeOptionList.setEnabled(true);
 				gameView.gameOptionsList.setEnabled(true);
-				gameView.startButton.setText("Start");
+				gameView.inputText.setEnabled(true);
 				gameView.loadButton.setEnabled(true);
+				gameView.randButton.setEnabled(true);
+				gameView.startButton.setEnabled(false);
+				gameView.timer.stop();
+				gameView.seconds = 0;
+				gameView.minutes = 0;
+				gameView.timeDisplay.setText("0:00");
 			}
 		},
 		
 		radioPlayActionListener = new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {				
-				//System.out.println("Play");
 				gameView.hideButton.setEnabled(false);
 				gameView.typeOptionList.setEnabled(false);
 				gameView.gameOptionsList.setEnabled(true);
-				gameView.startButton.setText("Start");
+				gameView.inputText.setEnabled(false);
 				gameView.loadButton.setEnabled(true);
+				gameView.randButton.setEnabled(true);
+				gameView.startButton.setEnabled(true);
+				gameView.timer.stop();
+				gameView.seconds = 0;
+				gameView.minutes = 0;
+				gameView.timeDisplay.setText("0:00");
 			}
-		});
+		},
+		
+		gameView.timer = new Timer(1000, new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				gameView.seconds++;
+				gameView.dSeconds = gameView.dFormat.format(gameView.seconds);
+				gameView.dMinutes = gameView.dFormat.format(gameView.minutes);
+				gameView.timeDisplay.setText(gameView.minutes + ":" + gameView.dSeconds);
+			
+				if(gameView.seconds == 60) {
+					gameView.seconds = 0;
+					gameView.minutes++;
+				
+					gameView.dSeconds = gameView.dFormat.format(gameView.seconds);
+					gameView.dMinutes = gameView.dFormat.format(gameView.minutes);
+					gameView.timeDisplay.setText(gameView.minutes + ":" + gameView.dSeconds);
+				}
+			}
+		}));
 	}
-	
-	
-	
-
 }
